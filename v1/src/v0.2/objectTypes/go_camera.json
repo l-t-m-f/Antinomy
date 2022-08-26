@@ -1,0 +1,65 @@
+{
+	"name": "GO_Camera",
+	"plugin-id": "Sprite",
+	"sid": 179584109525846,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "CameraMode",
+			"type": "number",
+			"desc": "",
+			"sid": 677230236700706
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 409826197435652
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 208823932334479
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "CameraMover",
+			"sid": 810879650940643
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "SpawnerNoRefreshZone",
+			"sid": 246412455625595
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2208171,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 588611976922413,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

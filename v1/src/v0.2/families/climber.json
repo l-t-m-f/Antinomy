@@ -1,0 +1,12 @@
+{
+	"name": "Climber",
+	"plugin-id": "Sprite",
+	"sid": 470882561054273,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Ladder",
+		"GO_Liana"
+	]
+}

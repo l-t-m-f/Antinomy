@@ -1,0 +1,36 @@
+{
+	"name": "Collectible",
+	"plugin-id": "Sprite",
+	"sid": 778022469419425,
+	"instanceVariables": [
+		{
+			"name": "Name",
+			"type": "string",
+			"desc": "",
+			"sid": 367056118411902
+		},
+		{
+			"name": "Collected",
+			"type": "boolean",
+			"desc": "",
+			"sid": 725620105873775
+		},
+		{
+			"name": "RefreshAfter",
+			"type": "number",
+			"desc": "",
+			"sid": 495059886806467
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 359174999959280
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_SoulShard"
+	]
+}

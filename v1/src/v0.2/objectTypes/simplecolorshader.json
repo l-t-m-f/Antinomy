@@ -1,0 +1,25 @@
+{
+	"name": "SimpleColorShader",
+	"plugin-id": "TiledBg",
+	"sid": 270910284237573,
+	"isGlobal": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		}
+	],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5250139,
+		"useCollisionPoly": true
+	}
+}

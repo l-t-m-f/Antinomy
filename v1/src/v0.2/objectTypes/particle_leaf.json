@@ -1,0 +1,67 @@
+{
+	"name": "Particle_Leaf",
+	"plugin-id": "Sprite",
+	"sid": 211999679988244,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 895069496251658
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7611151,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 13,
+						"height": 17,
+						"originX": 0.46153846153846156,
+						"originY": 0.5882352941176471,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5567093,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 16,
+						"height": 13,
+						"originX": 0.5625,
+						"originY": 0.38461538461538464,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4183610,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 391134671536241,
+				"name": "Variant",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

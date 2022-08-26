@@ -1,0 +1,56 @@
+{
+	"name": "GO_EnemySpawner",
+	"plugin-id": "Sprite",
+	"sid": 795028689170722,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SpawnedEnemy",
+			"type": "string",
+			"desc": "",
+			"sid": 758662785305844
+		},
+		{
+			"name": "Spawned",
+			"type": "boolean",
+			"desc": "",
+			"sid": 307772585987825
+		},
+		{
+			"name": "SpawnerGravityAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 760952583808479
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7160045,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 673400973109370,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

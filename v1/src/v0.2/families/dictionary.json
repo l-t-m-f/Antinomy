@@ -1,0 +1,12 @@
+{
+	"name": "Dictionary",
+	"plugin-id": "Dictionary",
+	"sid": 840603318241629,
+	"instanceVariables": [],
+	"members": [
+		"Dynamic_TemplateList",
+		"Dynamic_ZoneNamePerLayout",
+		"Dynamic_StatusEffectsList",
+		"Dynamic_EntityAbilitiesList"
+	]
+}

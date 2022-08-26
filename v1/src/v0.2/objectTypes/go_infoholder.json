@@ -1,0 +1,44 @@
+{
+	"name": "GO_InfoHolder",
+	"plugin-id": "Sprite",
+	"sid": 365599268365738,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "TextInfo",
+			"type": "string",
+			"desc": "",
+			"sid": 496430789661171
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8116700,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 409254890765600,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

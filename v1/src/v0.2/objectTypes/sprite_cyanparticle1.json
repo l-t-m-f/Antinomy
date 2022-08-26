@@ -1,0 +1,55 @@
+{
+	"name": "Sprite_CyanParticle1",
+	"plugin-id": "Sprite",
+	"sid": 937749936629737,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "AngleSine",
+			"sid": 535211120093768
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2845445,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 7,
+						"height": 7,
+						"originX": 0.42857142857142855,
+						"originY": 0.5714285714285714,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3344180,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 478133687303115,
+				"name": "Variant",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

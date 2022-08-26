@@ -1,0 +1,11 @@
+{
+	"name": "ButtonSprite",
+	"plugin-id": "Sprite",
+	"sid": 376849525432242,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"HubButtonAsset"
+	]
+}

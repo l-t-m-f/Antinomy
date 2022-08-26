@@ -1,0 +1,81 @@
+{
+	"name": "Controller",
+	"plugin-id": "Sprite",
+	"sid": 807893988655060,
+	"instanceVariables": [
+		{
+			"name": "MovementBehavior",
+			"type": "string",
+			"desc": "Name of the movement behavior of the object implementing Controller.",
+			"sid": 136382526449347
+		},
+		{
+			"name": "MoveDirection",
+			"type": "string",
+			"desc": "Name of the current movement direction of the object implementing Controller. If the object stops moving, this should be \"NULL\".",
+			"sid": 483703593964771
+		},
+		{
+			"name": "LastMovedDirection",
+			"type": "string",
+			"desc": "Name of the last direction the object implementing Controller  moved towards.",
+			"sid": 913585124075441
+		},
+		{
+			"name": "Occupied",
+			"type": "boolean",
+			"desc": "True if the controller is occupied. Can prevent certain actions from occurring to prevent conflict.",
+			"sid": 405561328242861
+		},
+		{
+			"name": "Action_NextToDrop",
+			"type": "number",
+			"desc": "Number representing the action kind the object implementing Controller should perform when next to a drop.",
+			"sid": 464573015089290
+		},
+		{
+			"name": "Action_NextToOtherEnemy",
+			"type": "number",
+			"desc": "Number representing the action kind the object implementing Controller should perform when next to another enemy. (Not implemented yet.)",
+			"sid": 508490034509926
+		},
+		{
+			"name": "Action_NextToWall",
+			"type": "number",
+			"desc": "Number representing the action kind the object implementing Controller should perform when next to a wall.",
+			"sid": 743265347139946
+		},
+		{
+			"name": "PhaseThrough",
+			"type": "boolean",
+			"desc": "If true, the object implementing Controller will not trigger a bounce from the player when crushed.",
+			"sid": 805129224310321
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Controller_Platform",
+			"sid": 370322894781862
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "Controller_8Direction",
+			"sid": 353244205584582
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Controller_Bullet",
+			"sid": 838803940067016
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Controller_Sine1",
+			"sid": 179549050020032
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

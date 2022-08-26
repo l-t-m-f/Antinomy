@@ -1,0 +1,44 @@
+{
+	"name": "GO_Slope",
+	"plugin-id": "Sprite",
+	"sid": 525993223678222,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SlopeDirection",
+			"type": "string",
+			"desc": "",
+			"sid": 981194898086281
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5522489,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 873071870178036,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

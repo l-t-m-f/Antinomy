@@ -1,0 +1,613 @@
+{
+	"name": "Combat",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Entities Combat",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DealDamage",
+					"functionDescription": "Substract HP from a specified Entity game object.",
+					"functionCategory": "Entities",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 170169946692995
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Substract HP from a specified Entity game object."
+						}
+					],
+					"sid": 383644422276155,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 954369109289491,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 424665769824375,
+									"parameters": [
+										"\"DealDamage\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 174719961477315
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 134740960492580
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 718717590979857,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 622578691335869,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 292186159422096,
+											"parameters": {
+												"instance-variable": "CurrentHP",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "GO_Entity",
+											"sid": 690659976483886,
+											"parameters": {
+												"instance-variable": "CurrentHP",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 575762251694739
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 390351015783036,
+											"parameters": {
+												"instance-variable": "CurrentHP",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DestroyEntity",
+											"sid": 275826241525178,
+											"parameters": [
+												"entityUID",
+												"0"
+											]
+										}
+									],
+									"sid": 443276370854311
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Combat Negative Effects",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "TickDownJumpDelay",
+							"functionDescription": "",
+							"functionCategory": "Entities",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 267015019618068
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 268304212466142,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 970773535441026,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 224348433010901,
+											"parameters": [
+												"\"TickDownJumpDelay\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 374345079980502
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 379466457032185
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 141944247907980,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 429170089624413,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GO_Entity",
+													"sid": 195487562218593,
+													"parameters": {
+														"instance-variable": "JumpDelay",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "GO_Entity",
+													"sid": 407742875211981,
+													"parameters": {
+														"instance-variable": "JumpDelay",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 819879569485818
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 893214496895053
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 583801753263282,
+													"parameters": {
+														"instance-variable": "JumpDelay",
+														"value": "-1"
+													}
+												}
+											],
+											"sid": 912950312308193
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "TickDownNegativeEffectRemainingDuration",
+							"functionDescription": "",
+							"functionCategory": "Entities, Combat, Negative effects",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 795759318285815
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 935568190540521,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 969551777712826,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 215132875110607,
+											"parameters": [
+												"\"TickDownNegativeEffectRemainingDuration\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 612178984242389
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 105183146070813
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 366001410324275,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 674286108289853,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GO_Entity",
+													"sid": 392653418248365,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffectRemainingTickCount",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "GO_Entity",
+													"sid": 722381607867388,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffectRemainingTickCount",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 862817231426742
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 505950592458280
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 518354136145020,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffectRemainingTickCount",
+														"value": "-1"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 194106167717586,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffect",
+														"value": "-1"
+													}
+												}
+											],
+											"sid": 126639465866335
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "stun",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"functionName": "TryStun",
+									"functionDescription": "",
+									"functionCategory": "Entities, Combat, Negative effects",
+									"functionReturnType": "none",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "entityUID",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"sid": 357056718800871
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 710631355581449,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 811853714787473,
+													"parameters": {
+														"variable": "entityUID",
+														"comparison": 0,
+														"value": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "LogError_InvalidValue",
+													"sid": 492491910294023,
+													"parameters": [
+														"\"TryStun\"",
+														"-1",
+														"\"entityUID\"",
+														"\"-1\""
+													]
+												}
+											],
+											"sid": 960054413471079
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 551415473696835
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "GO_Entity",
+													"sid": 763045333613956,
+													"parameters": {
+														"unique-id": "entityUID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 143825788022306,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "GO_Entity",
+															"sid": 553819108060293,
+															"parameters": {
+																"instance-variable": "CurrentNegativeEffect",
+																"comparison": 0,
+																"value": "-1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "Stun",
+															"sid": 118095564940394,
+															"parameters": [
+																"entityUID"
+															]
+														}
+													],
+													"sid": 559799642747398
+												}
+											]
+										}
+									]
+								},
+								{
+									"functionName": "Stun",
+									"functionDescription": "",
+									"functionCategory": "Entities, Combat, Negative effects",
+									"functionReturnType": "none",
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "entityUID",
+											"type": "number",
+											"initialValue": "-1",
+											"comment": "",
+											"sid": 420711296376877
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [],
+									"sid": 816302718252366,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 393545099037223,
+													"parameters": {
+														"variable": "entityUID",
+														"comparison": 0,
+														"value": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "LogError_InvalidValue",
+													"sid": 949009716615413,
+													"parameters": [
+														"\"Stun\"",
+														"-1",
+														"\"entityUID\"",
+														"\"-1\""
+													]
+												}
+											],
+											"sid": 807888690189232
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 678045802380018
+												},
+												{
+													"id": "pick-by-unique-id",
+													"objectClass": "GO_Entity",
+													"sid": 706000750921570,
+													"parameters": {
+														"unique-id": "entityUID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 960564280867415,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffect",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "TryFlashSprite",
+													"sid": 356614040791419,
+													"parameters": [
+														"entityUID",
+														"0.1",
+														"0.1",
+														"0.9"
+													]
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 924404118434397,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffectRemainingTickCount",
+														"value": "100"
+													}
+												}
+											],
+											"sid": 539957095199783
+										}
+									]
+								}
+							],
+							"sid": 388474850291824
+						}
+					],
+					"sid": 217209990700140
+				}
+			],
+			"sid": 755561446178059
+		}
+	],
+	"sid": 232479419045295
+}

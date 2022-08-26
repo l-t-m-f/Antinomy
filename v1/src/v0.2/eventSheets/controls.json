@@ -1,0 +1,150 @@
+{
+	"name": "Controls",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Key_Space",
+			"type": "number",
+			"initialValue": "32",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 712819181478934
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_LeftArw",
+			"type": "number",
+			"initialValue": "37",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 324873158543220
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_UpArw",
+			"type": "number",
+			"initialValue": "38",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 119765681850233
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_RightArw",
+			"type": "number",
+			"initialValue": "39",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 100523124981045
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_DownArw",
+			"type": "number",
+			"initialValue": "40",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 519928182650890
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_Shift",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 773663567359967
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_Alt",
+			"type": "number",
+			"initialValue": "18",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 886632780221941
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_G",
+			"type": "number",
+			"initialValue": "71",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 900740129116456
+		},
+		{
+			"eventType": "variable",
+			"name": "Key_L",
+			"type": "number",
+			"initialValue": "76",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 404462155442924
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 593527803029500
+						}
+					],
+					"actions": [
+						{
+							"id": "set-key",
+							"objectClass": "KeyboardKeys",
+							"sid": 111701440181596,
+							"parameters": {
+								"key": "str(Keyboard.LastKeyCode)",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 948984460580519
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-released",
+							"objectClass": "Keyboard",
+							"sid": 630042084829064
+						}
+					],
+					"actions": [
+						{
+							"id": "set-key",
+							"objectClass": "KeyboardKeys",
+							"sid": 628580090136658,
+							"parameters": {
+								"key": "str(Keyboard.LastKeyCode)",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 344636772746389
+				}
+			],
+			"sid": 480944868949475
+		}
+	],
+	"sid": 493288190415534
+}

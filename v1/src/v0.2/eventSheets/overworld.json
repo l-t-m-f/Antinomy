@@ -1,0 +1,714 @@
+{
+	"name": "Overworld",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "CurrentOverworldZone",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 880176723975237
+		},
+		{
+			"eventType": "variable",
+			"name": "CurrentOverworldSpot",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183217577283408
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Controls"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Camera"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 871314457491492
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "LoadStaticData",
+					"sid": 449824843889395
+				},
+				{
+					"callFunction": "GenerateKeysDictionary",
+					"sid": 379547351636934
+				}
+			],
+			"sid": 104312442237280
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 911229128927029
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "DoOverworldCamera",
+					"sid": 566655223207182
+				},
+				{
+					"callFunction": "DoOverworldPlayer",
+					"sid": 458276548510471
+				},
+				{
+					"callFunction": "TakeOverworldInput",
+					"sid": 722785163136382
+				}
+			],
+			"sid": 613424597409850
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Overworld Navigation",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "GoToNeighbor",
+					"functionDescription": "",
+					"functionCategory": "Overworld Navigation",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "neighbor",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 332241578589411
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 288804320459820,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 875539014925519,
+									"parameters": {
+										"variable": "neighbor",
+										"comparison": 0,
+										"value": "\"NULL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 641072169045229,
+									"parameters": [
+										"\"GoToNeighbor\"",
+										"-1",
+										"\"neighbor\"",
+										"\"NULL\""
+									]
+								}
+							],
+							"sid": 567558268019093
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 525141866025621
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 898509714221165,
+									"parameters": {
+										"object": "OverworldMapSpot",
+										"expression": "OverworldMapSpot.MapID",
+										"comparison": 0,
+										"value": "CurrentOverworldZone"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 726300689645422,
+									"parameters": {
+										"object": "OverworldMapSpot",
+										"expression": "OverworldMapSpot.SpotID",
+										"comparison": 0,
+										"value": "CurrentOverworldSpot"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 799669074137656,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 287090005565232,
+											"parameters": {
+												"variable": "neighbor",
+												"comparison": 0,
+												"value": "\"Top\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "OverworldMapSpot",
+											"sid": 785584492809653,
+											"parameters": {
+												"instance-variable": "Neighbor_Top",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 132818475506192,
+											"parameters": {
+												"variable": "CurrentOverworldSpot",
+												"value": "OverworldMapSpot.Neighbor_Top"
+											}
+										}
+									],
+									"sid": 420481684412794
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 359797115534525
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 255375098190546,
+											"parameters": {
+												"variable": "neighbor",
+												"comparison": 0,
+												"value": "\"Left\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "OverworldMapSpot",
+											"sid": 739838808753914,
+											"parameters": {
+												"instance-variable": "Neighbor_Left",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 623847168065271,
+											"parameters": {
+												"variable": "CurrentOverworldSpot",
+												"value": "OverworldMapSpot.Neighbor_Left"
+											}
+										}
+									],
+									"sid": 853816974788798
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 761131693400674
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 800027778779199,
+											"parameters": {
+												"variable": "neighbor",
+												"comparison": 0,
+												"value": "\"Down\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "OverworldMapSpot",
+											"sid": 817207210797732,
+											"parameters": {
+												"instance-variable": "Neighbor_Down",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 328035179280679,
+											"parameters": {
+												"variable": "CurrentOverworldSpot",
+												"value": "OverworldMapSpot.Neighbor_Down"
+											}
+										}
+									],
+									"sid": 649106790480081
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 364614558107961
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 110972493386795,
+											"parameters": {
+												"variable": "neighbor",
+												"comparison": 0,
+												"value": "\"Right\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "OverworldMapSpot",
+											"sid": 401162717536434,
+											"parameters": {
+												"instance-variable": "Neighbor_Right",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 322014075448503,
+											"parameters": {
+												"variable": "CurrentOverworldSpot",
+												"value": "OverworldMapSpot.Neighbor_Right"
+											}
+										}
+									],
+									"sid": 922606463561994
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "TakeOverworldInput",
+					"functionDescription": "",
+					"functionCategory": "Overworld Navigation",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 883768170745683,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 795313483471802,
+									"parameters": {
+										"key": "str(Key_UpArw)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "GoToNeighbor",
+									"sid": 706895313036090,
+									"parameters": [
+										"\"Top\""
+									]
+								},
+								{
+									"id": "set-key",
+									"objectClass": "KeyboardKeys",
+									"sid": 486978832300945,
+									"parameters": {
+										"key": "str(Keyboard.LastKeyCode)",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 970993927294915
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 747473479579371
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 972701621627854,
+									"parameters": {
+										"key": "str(Key_LeftArw)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "GoToNeighbor",
+									"sid": 347104459192085,
+									"parameters": [
+										"\"Left\""
+									]
+								},
+								{
+									"id": "set-key",
+									"objectClass": "KeyboardKeys",
+									"sid": 176501249120367,
+									"parameters": {
+										"key": "str(Keyboard.LastKeyCode)",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 347487868029581
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 121692317690547
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 802111141801875,
+									"parameters": {
+										"key": "str(Key_DownArw)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "GoToNeighbor",
+									"sid": 527271375059151,
+									"parameters": [
+										"\"Down\""
+									]
+								},
+								{
+									"id": "set-key",
+									"objectClass": "KeyboardKeys",
+									"sid": 421755728270962,
+									"parameters": {
+										"key": "str(Keyboard.LastKeyCode)",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 652385570132753
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 483339149389120
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 951164671325005,
+									"parameters": {
+										"key": "str(Key_RightArw)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "GoToNeighbor",
+									"sid": 191578401368511,
+									"parameters": [
+										"\"Right\""
+									]
+								},
+								{
+									"id": "set-key",
+									"objectClass": "KeyboardKeys",
+									"sid": 578051419730127,
+									"parameters": {
+										"key": "str(Keyboard.LastKeyCode)",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 546951898323152
+						}
+					]
+				}
+			],
+			"sid": 403395738505558
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Overworld Camera",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DoOverworldCamera",
+					"functionDescription": "",
+					"functionCategory": "Overworld, Camera",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 788306301640300,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 309466778738978,
+									"parameters": {
+										"variable": "CurrentOverworldZone",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "GO_Camera",
+									"sid": 617563362843999,
+									"parameters": {
+										"x": "128",
+										"y": "72"
+									}
+								}
+							],
+							"sid": 362412212727933
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 735959810410816
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 952709191132975,
+									"parameters": {
+										"variable": "CurrentOverworldZone",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "GO_Camera",
+									"sid": 416969777662044,
+									"parameters": {
+										"x": "128",
+										"y": "216"
+									}
+								}
+							],
+							"sid": 357997231923887
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 221933677408491
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 405152065796522,
+									"parameters": {
+										"variable": "CurrentOverworldZone",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "GO_Camera",
+									"sid": 594549032183172,
+									"parameters": {
+										"x": "128",
+										"y": "360"
+									}
+								}
+							],
+							"sid": 226766120128181
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 794289548638195
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 796086304530431,
+									"parameters": {
+										"variable": "CurrentOverworldZone",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "GO_Camera",
+									"sid": 580075434919762,
+									"parameters": {
+										"x": "128",
+										"y": "504"
+									}
+								}
+							],
+							"sid": 862800540653240
+						}
+					]
+				}
+			],
+			"sid": 355341753376586
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Overworld Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DoOverworldPlayer",
+					"functionDescription": "",
+					"functionCategory": "Overworld, Player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 280880994643270,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 883792165920970,
+									"parameters": {
+										"object": "OverworldMapSpot",
+										"expression": "OverworldMapSpot.MapID",
+										"comparison": 0,
+										"value": "CurrentOverworldZone"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 856295030344185,
+									"parameters": {
+										"object": "OverworldMapSpot",
+										"expression": "OverworldMapSpot.SpotID",
+										"comparison": 0,
+										"value": "CurrentOverworldSpot"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "OverworldPlayer",
+									"sid": 433116553293899,
+									"parameters": {
+										"x": "OverworldMapSpot.ImagePointX(\"Center\")",
+										"y": "OverworldMapSpot.ImagePointY(\"Center\")"
+									}
+								}
+							],
+							"sid": 535256374200107
+						}
+					]
+				}
+			],
+			"sid": 866853818796604
+		}
+	],
+	"sid": 766642870701188
+}

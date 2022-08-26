@@ -1,0 +1,679 @@
+{
+	"name": "Overworld",
+	"layers": [
+		{
+			"name": "BG",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 183,
+					"instanceVariables": {
+						"SpotID": 0,
+						"Neighbor_Top": 2,
+						"Neighbor_Left": -1,
+						"Neighbor_Down": -1,
+						"Neighbor_Right": 1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 34,
+						"y": 111,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 184,
+					"instanceVariables": {
+						"SpotID": 1,
+						"Neighbor_Top": 3,
+						"Neighbor_Left": 0,
+						"Neighbor_Down": -1,
+						"Neighbor_Right": 3,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 87,
+						"y": 112,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 185,
+					"instanceVariables": {
+						"SpotID": 2,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": 0,
+						"Neighbor_Down": 0,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 58,
+						"y": 77,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 186,
+					"instanceVariables": {
+						"SpotID": 3,
+						"Neighbor_Top": 4,
+						"Neighbor_Left": 1,
+						"Neighbor_Down": 1,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 127,
+						"y": 78,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 187,
+					"instanceVariables": {
+						"SpotID": 4,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": 5,
+						"Neighbor_Down": 3,
+						"Neighbor_Right": 6,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 108,
+						"y": 49,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 188,
+					"instanceVariables": {
+						"SpotID": 5,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": -1,
+						"Neighbor_Down": 4,
+						"Neighbor_Right": 4,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 59,
+						"y": 23,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 190,
+					"instanceVariables": {
+						"SpotID": 6,
+						"Neighbor_Top": 7,
+						"Neighbor_Left": 4,
+						"Neighbor_Down": 4,
+						"Neighbor_Right": 8,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 130,
+						"y": 37,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0.49019607843137253,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 191,
+					"instanceVariables": {
+						"SpotID": 7,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": -1,
+						"Neighbor_Down": 6,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 126,
+						"y": 18,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0.49019607843137253,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 192,
+					"instanceVariables": {
+						"SpotID": 8,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": 6,
+						"Neighbor_Down": 10,
+						"Neighbor_Right": 9,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 160,
+						"y": 28,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 193,
+					"instanceVariables": {
+						"SpotID": 10,
+						"Neighbor_Top": 8,
+						"Neighbor_Left": 8,
+						"Neighbor_Down": 12,
+						"Neighbor_Right": 11,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 196,
+						"y": 50,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 194,
+					"instanceVariables": {
+						"SpotID": 12,
+						"Neighbor_Top": 10,
+						"Neighbor_Left": -1,
+						"Neighbor_Down": -1,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 195,
+						"y": 60,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0.49019607843137253,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 195,
+					"instanceVariables": {
+						"SpotID": 11,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": 10,
+						"Neighbor_Down": 10,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 235,
+						"y": 38,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 196,
+					"instanceVariables": {
+						"SpotID": 9,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": 8,
+						"Neighbor_Down": 8,
+						"Neighbor_Right": -1,
+						"MapID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 199,
+						"y": 19,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldPlayer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 179,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": -16,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 707890383873889,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "_hidden",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 286328491939343,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				0.33
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "OverworldHUD",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "OverworldHUDBG",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 181,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 256,
+						"height": 6,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldHUDBG",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 182,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 144,
+						"width": 256,
+						"height": -16,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 896554468477200,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 988702710322066,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 256,
+	"height": 576,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Overworld"
+}

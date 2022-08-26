@@ -1,0 +1,48 @@
+{
+	"name": "CombatInteractible",
+	"plugin-id": "Sprite",
+	"sid": 310916154547004,
+	"instanceVariables": [
+		{
+			"name": "CurrentHP",
+			"type": "number",
+			"desc": "Current hit point of the object implementing CombatInteractible.",
+			"sid": 390591593602466
+		},
+		{
+			"name": "MaxHP",
+			"type": "number",
+			"desc": "Default maximum hit point of the object implementing CombatInteractible.",
+			"sid": 726037283714260
+		},
+		{
+			"name": "Immune",
+			"type": "boolean",
+			"desc": "True when the object implementing CombatInteractible can't have its HP reduced. Immune expires when ImmuneRemainingTickCount reaches 0.",
+			"sid": 269703886395490
+		},
+		{
+			"name": "ImmuneRemainingTickCount",
+			"type": "number",
+			"desc": "Remaining tick count before the Immune boolean of the same object implementing CombatInteractible is set back to false.",
+			"sid": 448132940881197
+		},
+		{
+			"name": "CurrentNegativeEffect",
+			"type": "number",
+			"desc": "ID of the current negative effect affecting the object implementing CombatInteractible. The CurrentNegativeEffect is set back to -1 (No effect) when CurrentNegativeEffectRemainingTickCount reaches 0, or the effect is otherwise canceled.",
+			"sid": 903727169798173
+		},
+		{
+			"name": "CurrentNegativeEffectRemainingTickCount",
+			"type": "number",
+			"desc": "Remaining tick count before the CurrentNegativeEffect is set back to -1 (No effect).",
+			"sid": 485655152664482
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

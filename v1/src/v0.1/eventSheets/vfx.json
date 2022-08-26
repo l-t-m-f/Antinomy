@@ -1,0 +1,494 @@
+{
+	"name": "VFX",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "VFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 208946090911226
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_CAMERA_FORCED_OFFSET",
+			"type": "number",
+			"initialValue": "40",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 690673384106981
+		},
+		{
+			"eventType": "variable",
+			"name": "CameraForcedOffset",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 439674568163821
+		},
+		{
+			"eventType": "variable",
+			"name": "CameraMode",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 262720611340447
+		},
+		{
+			"eventType": "variable",
+			"name": "CameraZoom",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 478758016847799
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Camera",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Camera",
+							"sid": 726526159195133
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 693355503342193,
+							"parameters": {
+								"variable": "Transition"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 429482918460856
+				},
+				{
+					"functionName": "SyncCamera",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 287238456932907,
+							"parameters": {
+								"scale": "CameraZoom"
+							}
+						}
+					],
+					"sid": 889987915515482,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 904770080858190,
+									"parameters": {
+										"variable": "CameraMode",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Camera",
+									"sid": 210492200810747,
+									"parameters": {
+										"x": "lerp(Self.X, GO_Entity.X, 0.08)",
+										"y": "lerp(Self.Y, GO_Entity.Y-28+CameraForcedOffset, 0.18)"
+									}
+								}
+							],
+							"sid": 240329031870385
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 619776130279125,
+									"parameters": {
+										"variable": "CameraMode",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Camera",
+									"sid": 877037679289470,
+									"parameters": {
+										"x": "lerp(Self.X, GO_Entity.X, 0.08)",
+										"y": "lerp(Self.Y, GO_Entity.Y, 0.18)"
+									}
+								}
+							],
+							"sid": 780708795846202
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 307630415134443,
+							"parameters": {
+								"object": "GO_Entity",
+								"expression": "GO_Entity.Name",
+								"comparison": 0,
+								"value": "\"Player\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 751825052825634,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-floor",
+									"objectClass": "GO_Entity",
+									"sid": 522023901913679,
+									"behaviorType": "Platform"
+								},
+								{
+									"id": "is-moving",
+									"objectClass": "GO_Entity",
+									"sid": 693568372269359,
+									"behaviorType": "Platform",
+									"isInverted": true
+								},
+								{
+									"id": "compare-at-x",
+									"objectClass": "KeyboardInputs",
+									"sid": 912480421762823,
+									"parameters": {
+										"x": "KeyCode_DownArrow",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 454768528382851,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 104074416089593,
+											"parameters": {
+												"variable": "CameraForcedOffset",
+												"comparison": 2,
+												"value": "MAX_CAMERA_FORCED_OFFSET"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 999051032277278,
+											"parameters": {
+												"variable": "CameraForcedOffset",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 304482339268830
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 137759150328729
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 205630087837901,
+											"parameters": {
+												"variable": "CameraForcedOffset",
+												"value": "MAX_CAMERA_FORCED_OFFSET"
+											}
+										}
+									],
+									"sid": 854673786225971
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 795294641274433
+								}
+							],
+							"actions": [],
+							"sid": 384672938440824,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 913958247482826,
+											"parameters": {
+												"variable": "CameraForcedOffset",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 677597379571258,
+											"parameters": {
+												"variable": "CameraForcedOffset",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 228742690489728
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 153708406611221
+		},
+		{
+			"eventType": "variable",
+			"name": "Transition",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 347083993181716
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Transitions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "TriggerSceneTransition",
+					"functionDescription": "",
+					"functionCategory": "VFX Transitions",
+					"functionReturnType": "none",
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "waypointUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 243367042825098
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Waypoint",
+							"sid": 334261485962212,
+							"parameters": {
+								"unique-id": "waypointUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 503329444122464,
+							"parameters": {
+								"variable": "Transition",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "TransitionTween",
+							"sid": 724940606801634
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 239999583513121,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 286570599905216,
+							"parameters": {
+								"x": "GO_Waypoint.GotoX",
+								"y": "GO_Waypoint.GotoY"
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 202446023390765,
+							"parameters": {
+								"layout": "GO_Waypoint.Goto"
+							}
+						}
+					],
+					"sid": 425933487770707
+				},
+				{
+					"functionName": "TransitionTween",
+					"functionDescription": "",
+					"functionCategory": "VFX Transitions",
+					"functionReturnType": "none",
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 760296973948344,
+							"parameters": {
+								"variable": "CameraMode",
+								"value": "1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "FullscreenTransition",
+							"sid": 150352412492526,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "Camera",
+							"sid": 478504563671605,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Zoom\"",
+								"start-value": "1",
+								"end-value": "6",
+								"time": "0.4",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes"
+							}
+						}
+					],
+					"sid": 181980359491141
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-any-playing",
+							"objectClass": "Camera",
+							"sid": 170074470989433,
+							"behaviorType": "Tween"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 851533467594374,
+							"parameters": {
+								"variable": "CameraZoom",
+								"value": "Camera.Tween.Value(\"Zoom\")"
+							}
+						}
+					],
+					"sid": 345882797213621
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "Camera",
+							"sid": 547169370916309,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Zoom\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 795514245314883,
+							"parameters": {
+								"variable": "CameraMode",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 702487227514526,
+							"parameters": {
+								"variable": "Transition",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 852140094712232
+				}
+			],
+			"sid": 101394154433441
+		}
+	],
+	"sid": 304480133930433
+}

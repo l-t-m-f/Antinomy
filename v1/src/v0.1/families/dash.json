@@ -1,0 +1,30 @@
+{
+	"name": "Dash",
+	"plugin-id": "Sprite",
+	"sid": 805250705411904,
+	"instanceVariables": [
+		{
+			"name": "Dashing",
+			"type": "boolean",
+			"desc": "",
+			"sid": 205840740609026
+		},
+		{
+			"name": "CanDash",
+			"type": "boolean",
+			"desc": "",
+			"sid": 810431886162806
+		},
+		{
+			"name": "RemainingDuration",
+			"type": "number",
+			"desc": "",
+			"sid": 852848804104847
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

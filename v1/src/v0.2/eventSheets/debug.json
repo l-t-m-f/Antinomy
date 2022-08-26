@@ -1,0 +1,321 @@
+{
+	"name": "Debug",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Text",
+					"sid": 201196524507062
+				}
+			],
+			"actions": [],
+			"sid": 350979897870167,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text",
+							"sid": 715948765634431,
+							"parameters": {
+								"instance-variable": "PlaceOnDebugLayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "Text",
+							"sid": 347161222310061,
+							"parameters": {
+								"layer": "\"DEBUG\""
+							}
+						}
+					],
+					"sid": 141730974690862
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug Layer Display",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When shift and 'G' are pressed, display the '_debug' layer."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "KeyboardKeys",
+							"sid": 268924012058337,
+							"parameters": {
+								"key": "str(Key_Shift)",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 968182323891862,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 822612601676010,
+									"parameters": {
+										"key": "str(Key_G)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 995629976127732,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 121633303399189,
+											"parameters": {
+												"layer": "\"DEBUG\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 640905857401325,
+											"parameters": {
+												"layer": "\"DEBUG\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 912749004829705
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 351491661809990
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 917621982948783,
+											"parameters": {
+												"layer": "\"DEBUG\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 179197026005065,
+											"parameters": {
+												"layer": "\"DEBUG\"",
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 453864873238470
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "KeyboardKeys",
+											"sid": 197873360338392,
+											"parameters": {
+												"key": "str(Key_G)",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 438992783846524
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "KeyboardKeys",
+									"sid": 542092071145908,
+									"parameters": {
+										"key": "str(Key_L)",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 124395702949923,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 320979425856240,
+											"parameters": {
+												"layer": "\"DEBUG_FIXED\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 510250695758844,
+											"parameters": {
+												"layer": "\"DEBUG_FIXED\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 990018891823695
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 184170631980688
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 300454907702871,
+											"parameters": {
+												"layer": "\"DEBUG_FIXED\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 310652267511187,
+											"parameters": {
+												"layer": "\"DEBUG_FIXED\"",
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 155655675951432
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "KeyboardKeys",
+											"sid": 117029803990543,
+											"parameters": {
+												"key": "str(Key_L)",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 163096479199415
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 387431227301272
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Entity Debug Infobox",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "UpdatePlayerDebugInfobox",
+					"functionDescription": "",
+					"functionCategory": "Debug",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 657384314398143,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 629083640445520,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.Type",
+										"comparison": 0,
+										"value": "\"PlayerDebugInfobox\""
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 550970321236768,
+									"parameters": {
+										"object": "GO_Entity",
+										"expression": "GO_Entity.Name",
+										"comparison": 0,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 184657285820672,
+									"parameters": {
+										"text": "GO_Entity.Name&newline&\nGO_Entity.MoveDirection&newline&\nGO_Entity.ActionState&\"~\"&GO_Entity.StandingState"
+									}
+								}
+							],
+							"sid": 302161144076793
+						}
+					]
+				}
+			],
+			"sid": 879182086492227
+		}
+	],
+	"sid": 613722682525240
+}

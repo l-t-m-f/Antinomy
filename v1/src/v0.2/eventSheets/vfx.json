@@ -1,0 +1,76 @@
+{
+	"name": "VFX",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "VFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "VFX_ElectricStorm",
+							"sid": 592575333080723
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "VFX_ElectricStorm",
+							"sid": 635533394318411,
+							"parameters": {
+								"layer": "\"Entities\""
+							}
+						}
+					],
+					"sid": 926374242128525
+				}
+			],
+			"sid": 972035003515195
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Particles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Particle_Leaf",
+							"sid": 272789927862984
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Particle_Leaf",
+							"sid": 448853217214055,
+							"parameters": {
+								"frame-number": "choose(0, 1, 2)"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Particle_Leaf",
+							"sid": 627828340295447,
+							"parameters": {
+								"angle": "random(0, 360)\n"
+							}
+						}
+					],
+					"sid": 432848011951340
+				}
+			],
+			"sid": 536197986222071
+		}
+	],
+	"sid": 954548210990393
+}

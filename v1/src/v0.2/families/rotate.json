@@ -1,0 +1,22 @@
+{
+	"name": "Rotate",
+	"plugin-id": "Sprite",
+	"sid": 111411159694031,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 232305071167128
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 421170453968025
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

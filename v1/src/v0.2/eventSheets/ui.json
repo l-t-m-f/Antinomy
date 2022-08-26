@@ -1,0 +1,2392 @@
+{
+	"name": "UI",
+	"events": [
+		{
+			"functionName": "DoUI",
+			"functionDescription": "",
+			"functionCategory": "UI",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"callFunction": "DoButtons",
+					"sid": 247907615606944
+				},
+				{
+					"callFunction": "UpdatePlayerDebugInfobox",
+					"sid": 422160237919418
+				}
+			],
+			"sid": 246425903778241,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 994719542888418,
+							"parameters": {
+								"object": "GO_Entity",
+								"expression": "GO_Entity.Name",
+								"comparison": 0,
+								"value": "\"Unikid\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 297689227646280,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GO_Entity",
+									"sid": 258648245174510,
+									"parameters": {
+										"instance-variable": "ActionState",
+										"comparison": 0,
+										"value": "ReadAction"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "GO_Entity",
+									"sid": 362921186221559,
+									"parameters": {
+										"object": "GO_InfoHolder"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 542547914575316,
+									"parameters": {
+										"object": "TEMP_SpriteFont",
+										"expression": "TEMP_SpriteFont.Type",
+										"comparison": 0,
+										"value": "\"InfoSign\"\n"
+									}
+								},
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "GO_InfoHolder",
+									"sid": 402736250925780,
+									"parameters": {
+										"which": "nearest",
+										"x": "GO_Entity.X",
+										"y": "GO_Entity.Y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 768014855702449,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 763628463113975,
+											"parameters": {
+												"layer": "\"InfoSigns\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "TEMP_SpriteFont",
+											"sid": 140518654534878,
+											"parameters": {
+												"text": "GO_InfoHolder.TextInfo"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 813175414522880,
+											"parameters": {
+												"layer": "\"InfoSigns\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 686950358436614
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 648239825242142
+								}
+							],
+							"actions": [],
+							"sid": 990748548884023,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 276319118329636,
+											"parameters": {
+												"layer": "\"InfoSigns\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 659407327613952,
+											"parameters": {
+												"layer": "\"InfoSigns\"",
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 767025072897633
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Zone Label",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DisplayZoneLabel",
+					"functionDescription": "",
+					"functionCategory": "UI, Zone Label",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 619047806828062,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 392255913425459,
+									"parameters": {
+										"first-value": "Functions.CheckIfDictionaryContainsKey(Dynamic_ZoneNamePerLayout.UID, LayoutName)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 870139871996185,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 236981373365992,
+											"parameters": {
+												"object": "SpriteFont",
+												"expression": "SpriteFont.Type",
+												"comparison": 0,
+												"value": "\"ZoneLabel\""
+											}
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "SpriteFont",
+											"sid": 190785044567193,
+											"parameters": {
+												"text-to-compare": "Dynamic_ZoneNamePerLayout.Get(LayoutName)",
+												"case-sensitivity": "ignore-case"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "SpriteFont",
+											"sid": 896517346086851,
+											"parameters": {
+												"text": "Dynamic_ZoneNamePerLayout.Get(LayoutName)"
+											}
+										}
+									],
+									"sid": 682812352329780
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 887567439870059
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_Custom",
+									"sid": 690820756770363,
+									"parameters": [
+										"\"DisplayZoneLabel\"",
+										"1",
+										"\"Zone label for layout '\"&LayoutName&\"' is not part of the dynamic zone label list.\"",
+										"101"
+									]
+								}
+							],
+							"sid": 911796472159906
+						}
+					]
+				}
+			],
+			"sid": 551106402874880
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-released",
+							"objectClass": "Mouse",
+							"sid": 964419175790198,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 553812519101213,
+							"parameters": {
+								"object": "UI_Button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TryActivateButton",
+							"sid": 400409478578945,
+							"parameters": [
+								"UI_Button.UID"
+							]
+						}
+					],
+					"sid": 298253509907599
+				},
+				{
+					"functionName": "DoButtons",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 523911649103843,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 728825704695902,
+									"parameters": {
+										"object": "UI_Button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TakeInputForButtonState",
+									"sid": 283504637983817,
+									"parameters": [
+										"UI_Button.UID"
+									]
+								},
+								{
+									"callFunction": "DoButtonAppearance",
+									"sid": 581558163404582,
+									"parameters": [
+										"UI_Button.UID"
+									]
+								}
+							],
+							"sid": 235483942254706
+						}
+					]
+				},
+				{
+					"functionName": "functionProto_button",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "buttonUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 350538089708897
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 768000253418010,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 866646189905453,
+									"parameters": {
+										"variable": "buttonUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 437342642773672,
+									"parameters": [
+										"\"func\"",
+										"-1",
+										"\"buttonUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 348857974682834,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 857668493158781
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 510478588344314,
+									"parameters": {
+										"object": "UI_Button",
+										"expression": "UI_Button.UID",
+										"comparison": 0,
+										"value": "buttonUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 578035051039091,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 822518551071728,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "TakeInputForButtonState",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "buttonUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 785528295607070
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 898920097778045,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 609025608438188,
+									"parameters": {
+										"variable": "buttonUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 794045630925444,
+									"parameters": [
+										"\"TakeInputForButtonState\"",
+										"-1",
+										"\"buttonUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 996906730795628
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 368076457994363
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 181300420796703,
+									"parameters": {
+										"object": "UI_Button",
+										"expression": "UI_Button.UID",
+										"comparison": 0,
+										"value": "buttonUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 374829324211668,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 808874719870542,
+											"parameters": {
+												"object": "UI_Button"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 849630295676187,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "mouse-button-is-down",
+													"objectClass": "Mouse",
+													"sid": 845187812394227,
+													"parameters": {
+														"mouse-button": "left"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "TryChangeButtonState",
+													"sid": 252651529064327,
+													"parameters": [
+														"buttonUID",
+														"2"
+													]
+												}
+											],
+											"sid": 545165473851079
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 216577948004788
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "TryChangeButtonState",
+													"sid": 287024518811354,
+													"parameters": [
+														"buttonUID",
+														"1"
+													]
+												}
+											],
+											"sid": 918978246225426
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 304696801854263
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "TryChangeButtonState",
+											"sid": 860507568296473,
+											"parameters": [
+												"buttonUID",
+												"0"
+											]
+										}
+									],
+									"sid": 980796580613509
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "TryChangeButtonState",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "buttonUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 458737309174157
+						},
+						{
+							"name": "state",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 495386749193170
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 835590168065152,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 499708004225023,
+									"parameters": {
+										"variable": "buttonUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 617113636966702,
+									"parameters": [
+										"\"TryChangeButtonState\"",
+										"-1",
+										"\"buttonUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 304381296817660
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 416413680501888
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 536293099764807,
+									"parameters": {
+										"object": "UI_Button",
+										"expression": "UI_Button.UID",
+										"comparison": 0,
+										"value": "buttonUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 493002561051208,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UI_Button",
+											"sid": 207645899489732,
+											"parameters": {
+												"instance-variable": "CurrentState",
+												"comparison": 1,
+												"value": "state"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 127892731476648,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "UI_Button",
+													"sid": 542143223040050,
+													"parameters": {
+														"instance-variable": "Locked"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 341102122655630,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "UI_Button",
+															"sid": 997313197169597,
+															"parameters": {
+																"instance-variable": "InvisibleWhenLocked"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "ChangeButtonState",
+															"sid": 666000292231612,
+															"parameters": [
+																"buttonUID",
+																"state"
+															]
+														}
+													],
+													"sid": 230427138415870
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 825478364741112
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "UI_Button",
+													"sid": 831191867654063,
+													"parameters": {
+														"instance-variable": "Locked"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ChangeButtonState",
+													"sid": 296147825942725,
+													"parameters": [
+														"buttonUID",
+														"state"
+													]
+												}
+											],
+											"sid": 955115836417619
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "ChangeButtonState",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "buttonUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 241127412180407
+						},
+						{
+							"name": "state",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 831682789384103
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 583520886462813,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 600967594863336,
+									"parameters": {
+										"variable": "buttonUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 232935560618808,
+									"parameters": [
+										"\"ChangeButtonState\"",
+										"-1",
+										"\"buttonUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 691369154625343
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 464333720285615
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 822059683983320,
+									"parameters": {
+										"object": "UI_Button",
+										"expression": "UI_Button.UID",
+										"comparison": 0,
+										"value": "buttonUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UI_Button",
+									"sid": 106366881845305,
+									"parameters": {
+										"instance-variable": "CurrentState",
+										"value": "state"
+									}
+								}
+							],
+							"sid": 927690510079639
+						}
+					]
+				},
+				{
+					"functionName": "DoButtonAppearance",
+					"functionDescription": "",
+					"functionCategory": "UI, Buttons",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "buttonUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 984599880010640
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 968605598684230,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 765667954082961,
+									"parameters": {
+										"variable": "buttonUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 668800169379253,
+									"parameters": [
+										"\"DoButtonAppearance\"",
+										"-1",
+										"\"buttonUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 665822306505363
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 348278972259010
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 160108700020653,
+									"parameters": {
+										"object": "UI_Button",
+										"expression": "UI_Button.UID",
+										"comparison": 0,
+										"value": "buttonUID"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "UI_Button",
+									"sid": 243190382724840,
+									"parameters": {
+										"child": "ButtonSprite",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 365415857375933,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "new_r",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 575487055739696
+								},
+								{
+									"eventType": "variable",
+									"name": "new_g",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 565966023159178
+								},
+								{
+									"eventType": "variable",
+									"name": "new_b",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 114704870721846
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "UI_Button",
+											"sid": 805930136539764,
+											"parameters": {
+												"instance-variable": "Locked"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 518321465270343,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "UI_Button",
+													"sid": 762117204625870,
+													"parameters": {
+														"instance-variable": "InvisibleWhenLocked"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "ButtonSprite",
+													"sid": 478886881521935,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 753789745323770,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "UI_Button",
+															"sid": 955594004783684,
+															"parameters": {
+																"child": "ButtonText",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "ButtonText",
+															"sid": 226949523559933,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														}
+													],
+													"sid": 136730623208838
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 955169404157126
+												}
+											],
+											"actions": [],
+											"sid": 408185236733731,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 873012235960262,
+															"parameters": {
+																"instance-variable": "CurrentState",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 959980176670063,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 963902332582607,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Red\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 496455521927264,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 637031467024012,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseR-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 967080252864376,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseR-90"
+																	}
+																}
+															],
+															"sid": 579733622675246
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 911818073027833
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 922363806307104,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Green\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 184503784042646,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseG-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 914524217304717,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 768700105448585,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseG-90"
+																	}
+																}
+															],
+															"sid": 156775497154154
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 242090947616229
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 921754187098809,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Blue\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 231692717422239,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseB-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 500967569975718,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseB-90"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 667864169338989,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB-90"
+																	}
+																}
+															],
+															"sid": 541285625153392
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 157857409917720
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 336966397725650,
+															"parameters": {
+																"instance-variable": "CurrentState",
+																"comparison": 0,
+																"value": "1"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 550242269967915,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 961018069327938,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Red\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 695077254427194,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 341360243250277,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 917464951699918,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseR"
+																	}
+																}
+															],
+															"sid": 420542581026271
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 135079503427733
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 960160287766203,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Green\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 273509323847491,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 839584073702688,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 103112207866626,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseG"
+																	}
+																}
+															],
+															"sid": 195290338435620
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 921919556270057
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 558762772078143,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Blue\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 674048323749495,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseB"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 434962467359380,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseB"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 309558625654160,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 259594231747601
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 149997500140075
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 285754877789161,
+															"parameters": {
+																"instance-variable": "CurrentState",
+																"comparison": 0,
+																"value": "2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 199480276674374,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 794024621560493,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Red\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 182866189308234,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 508794076121048,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 888145677074101,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseR"
+																	}
+																}
+															],
+															"sid": 777909840235380
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 546720836502013
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 935589045694076,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Green\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 427415900291169,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 576317350931368,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 771174966106456,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseG"
+																	}
+																}
+															],
+															"sid": 123527927870618
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 939045565085305
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 682212504604403,
+																	"parameters": {
+																		"instance-variable": "MainColor",
+																		"comparison": 0,
+																		"value": "\"Blue\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 323644694483626,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseB"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 810117307565173,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseB"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 851797316427118,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 145611944146368
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 265371498070589
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "UI_Button",
+											"sid": 303186224312505,
+											"parameters": {
+												"instance-variable": "Locked"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "ButtonSprite",
+											"sid": 994016458139998,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 995276171367049,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UI_Button",
+													"sid": 586289908371067,
+													"parameters": {
+														"instance-variable": "CurrentState",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 563372814595265,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 687929318518299,
+															"parameters": {
+																"instance-variable": "MainColor",
+																"comparison": 0,
+																"value": "\"Red\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 396118758882307,
+															"parameters": {
+																"variable": "new_r",
+																"value": "UI_Button.BaseR-90"
+															}
+														}
+													],
+													"sid": 784535839998922,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 875173456347888,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Green\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 313271155809983,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG-45"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 224709671748804,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 318103933367919
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 567105945476341
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 347334032721845,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Blue\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 515734567638490,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 985587985875470,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB-45"
+																	}
+																}
+															],
+															"sid": 892190609547174
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 768031334803751
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 630481413000913,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 460128240537370,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 950933892798357
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 823319036330808
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 402687399646141,
+															"parameters": {
+																"instance-variable": "MainColor",
+																"comparison": 0,
+																"value": "\"Green\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 113428002152802,
+															"parameters": {
+																"variable": "new_g",
+																"value": "UI_Button.BaseG-90"
+															}
+														}
+													],
+													"sid": 997309023041110,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 982572812898695,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Red\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 248490149610978,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseR-45"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 320022333525631,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 196668642235104
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 877633263389455
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 436800679137342,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Blue\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 753723777096109,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 999753982767941,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB-45"
+																	}
+																}
+															],
+															"sid": 462042854002913
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 350716645695330
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 405592445820762,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 924929934723115,
+																	"parameters": {
+																		"variable": "new_b",
+																		"value": "UI_Button.BaseB"
+																	}
+																}
+															],
+															"sid": 620308695679660
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 880237814302014
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "UI_Button",
+															"sid": 119582462305429,
+															"parameters": {
+																"instance-variable": "MainColor",
+																"comparison": 0,
+																"value": "\"Blue\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 692271677784725,
+															"parameters": {
+																"variable": "new_b",
+																"value": "UI_Button.BaseB-90"
+															}
+														}
+													],
+													"sid": 119676107334532,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 745075309692818,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Red\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 660247995297180,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR-45"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 766071913931196,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																}
+															],
+															"sid": 615613104522146
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 874089475322348
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "UI_Button",
+																	"sid": 225356216676639,
+																	"parameters": {
+																		"instance-variable": "SecondaryColor",
+																		"comparison": 0,
+																		"value": "\"Green\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 774810077784299,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 185557987352969,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG-45"
+																	}
+																}
+															],
+															"sid": 979540396954020
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 409207745616403
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 184486953703888,
+																	"parameters": {
+																		"variable": "new_r",
+																		"value": "UI_Button.BaseR"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 242664306919506,
+																	"parameters": {
+																		"variable": "new_g",
+																		"value": "UI_Button.BaseG"
+																	}
+																}
+															],
+															"sid": 859490445504295
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 455666356250674
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UI_Button",
+													"sid": 301192306991443,
+													"parameters": {
+														"instance-variable": "CurrentState",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 305142039718376,
+													"parameters": {
+														"variable": "new_r",
+														"value": "UI_Button.BaseR"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 101650062626738,
+													"parameters": {
+														"variable": "new_g",
+														"value": "UI_Button.BaseG"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 325752773155366,
+													"parameters": {
+														"variable": "new_b",
+														"value": "UI_Button.BaseB"
+													}
+												}
+											],
+											"sid": 885972376933669
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 851822058993787
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UI_Button",
+													"sid": 770626266860246,
+													"parameters": {
+														"instance-variable": "CurrentState",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 475274797018917,
+													"parameters": {
+														"variable": "new_r",
+														"value": "255"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 447975389541595,
+													"parameters": {
+														"variable": "new_g",
+														"value": "255"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 285793822305257,
+													"parameters": {
+														"variable": "new_b",
+														"value": "255"
+													}
+												}
+											],
+											"sid": 520317698089105
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "UI_Button",
+													"sid": 888357164632978,
+													"parameters": {
+														"child": "ButtonText",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "ButtonText",
+													"sid": 965349883719873,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 891278766915986
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "ButtonSprite",
+											"sid": 847360332552802,
+											"parameters": {
+												"color": "rgbEx255(new_r, new_g, new_b)"
+											}
+										}
+									],
+									"sid": 890916834007956
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Buttons Effects",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "TryActivateButton",
+							"functionDescription": "",
+							"functionCategory": "UI, Buttons, Effects",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "buttonUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 245604985304813
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 475417546729137,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 663957030784930,
+											"parameters": {
+												"variable": "buttonUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 991422767936393,
+											"parameters": [
+												"\"TryActivateButton\"",
+												"-1",
+												"\"buttonUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 860595349887965
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 832197027034526
+										},
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 993539389231538,
+											"parameters": {
+												"object": "UI_Button",
+												"expression": "UI_Button.UID",
+												"comparison": 0,
+												"value": "buttonUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 181545177958309,
+											"parameters": {
+												"seconds": "0.25"
+											}
+										}
+									],
+									"sid": 609525609375869,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "cursor-is-over-object",
+													"objectClass": "Mouse",
+													"sid": 453278423999739,
+													"parameters": {
+														"object": "UI_Button"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ActivateButton",
+													"sid": 758334001438684,
+													"parameters": [
+														"buttonUID"
+													]
+												}
+											],
+											"sid": 216583443905304
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "ActivateButton",
+							"functionDescription": "",
+							"functionCategory": "UI, Buttons, Effects",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "buttonUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 693422451166838
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 752456763883329,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 427713961094370,
+											"parameters": {
+												"variable": "buttonUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 145392660663230,
+											"parameters": [
+												"\"ActivateButton\"",
+												"-1",
+												"\"buttonUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 634110736644758
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 404063989482577
+										},
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 937232233925856,
+											"parameters": {
+												"object": "UI_Button",
+												"expression": "UI_Button.UID",
+												"comparison": 0,
+												"value": "buttonUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 921197562394021,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UI_Button",
+													"sid": 179648342870150,
+													"parameters": {
+														"instance-variable": "ActivationEffect",
+														"comparison": 0,
+														"value": "\"NewGame\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 938193156794616,
+													"parameters": {
+														"layout": "TestStage"
+													}
+												}
+											],
+											"sid": 823510259693169
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 493094510980608
+				}
+			],
+			"sid": 954837440826178
+		}
+	],
+	"sid": 921122100220643
+}

@@ -1,0 +1,11 @@
+{
+	"name": "EntitySprite",
+	"plugin-id": "Sprite",
+	"sid": 708420308786481,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"PlayerSprite"
+	]
+}

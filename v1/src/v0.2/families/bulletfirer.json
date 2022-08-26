@@ -1,0 +1,36 @@
+{
+	"name": "BulletFirer",
+	"plugin-id": "Sprite",
+	"sid": 532271530503505,
+	"instanceVariables": [
+		{
+			"name": "Weap1_Charge",
+			"type": "number",
+			"desc": "",
+			"sid": 394222171158533
+		},
+		{
+			"name": "ReverseCharge",
+			"type": "boolean",
+			"desc": "",
+			"sid": 313842812411276
+		},
+		{
+			"name": "AimAngleAdjust",
+			"type": "number",
+			"desc": "",
+			"sid": 651038556057498
+		},
+		{
+			"name": "Weap1_BulletCount",
+			"type": "number",
+			"desc": "",
+			"sid": 385830710398030
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"name": "Menu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "UI"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "HTMLButton",
+					"sid": 720310521926450
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 192754638642983,
+					"parameters": {
+						"layout": "1_N1_MyHouse_A"
+					}
+				}
+			],
+			"sid": 374162357253773
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "HubParticle",
+					"sid": 887907985693907
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "HubParticle",
+					"sid": 856206749797576,
+					"parameters": {
+						"frame-number": "round(random(0, Self.AnimationFrameCount-1))"
+					}
+				}
+			],
+			"sid": 397661460726679
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 267915918527003
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "DoUI",
+					"sid": 258811902128475
+				}
+			],
+			"sid": 981906627053294
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 855593443103250
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "LoadStaticData",
+					"sid": 743210307487459
+				},
+				{
+					"callFunction": "GenerateKeysDictionary",
+					"sid": 211474096613051
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 708131306184902
+				}
+			],
+			"sid": 155428464056598
+		}
+	],
+	"sid": 460254309624247
+}

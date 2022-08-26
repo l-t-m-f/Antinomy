@@ -1,0 +1,104 @@
+{
+	"name": "GO_Waypoint",
+	"plugin-id": "Sprite",
+	"sid": 857232982561262,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Goto",
+			"type": "string",
+			"desc": "",
+			"sid": 855822086406188
+		},
+		{
+			"name": "GotoX",
+			"type": "number",
+			"desc": "",
+			"sid": 265664609183412
+		},
+		{
+			"name": "GotoY",
+			"type": "number",
+			"desc": "",
+			"sid": 198165661555583
+		},
+		{
+			"name": "KeepX",
+			"type": "boolean",
+			"desc": "",
+			"sid": 715144343906292
+		},
+		{
+			"name": "KeepY",
+			"type": "boolean",
+			"desc": "",
+			"sid": 641104787350648
+		},
+		{
+			"name": "BufferingCalled",
+			"type": "boolean",
+			"desc": "",
+			"sid": 497219854350782
+		},
+		{
+			"name": "NextShaderR",
+			"type": "number",
+			"desc": "",
+			"sid": 835750779072988
+		},
+		{
+			"name": "NextShaderG",
+			"type": "number",
+			"desc": "",
+			"sid": 804066970507946
+		},
+		{
+			"name": "NextShaderB",
+			"type": "number",
+			"desc": "",
+			"sid": 913111373313944
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6492749,
+						"collisionPoly": {
+							"points": [
+								0.0625,
+								0.041666666666666664,
+								0.9375,
+								0.041666666666666664,
+								0.9375,
+								0.9583333333333334,
+								0.0625,
+								0.9583333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 461925113306304,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

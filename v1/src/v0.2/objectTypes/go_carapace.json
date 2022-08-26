@@ -1,0 +1,51 @@
+{
+	"name": "GO_Carapace",
+	"plugin-id": "Sprite",
+	"sid": 138487992812835,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "RemainingDuration",
+			"type": "number",
+			"desc": "",
+			"sid": 186100763123119
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 13,
+						"height": 14,
+						"originX": 1.3846153846153846,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8556289,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Bounce",
+								"x": 0.6923076923076923,
+								"y": 0.19642857142857142
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 307791144213098,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

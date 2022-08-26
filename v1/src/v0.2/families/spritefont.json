@@ -1,0 +1,24 @@
+{
+	"name": "SpriteFont",
+	"plugin-id": "Spritefont2",
+	"sid": 843215904816586,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"sid": 386869766788603
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "SpriteFontFade",
+			"sid": 434495746059439
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"SpriteFont_KiwiSoda_Medium_22_1111_20x25"
+	]
+}

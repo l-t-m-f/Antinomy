@@ -1,0 +1,1697 @@
+{
+	"name": "Main",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Entities"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Debug"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "UI"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Controls"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Camera"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Collisions"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "VFX"
+		},
+		{
+			"eventType": "comment",
+			"text": "Main Start"
+		},
+		{
+			"functionName": "CreatePlayer",
+			"functionDescription": "",
+			"functionCategory": "Entities, Player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 980153923904322,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 886910149248388,
+							"parameters": {
+								"variable": "PlayerSpawnX",
+								"comparison": 0,
+								"value": "-1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 654136777914841,
+							"parameters": {
+								"variable": "PlayerSpawnY",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "CreateEntity",
+							"sid": 253932998309613,
+							"parameters": [
+								"GO_PlayerSpawner.X",
+								"GO_PlayerSpawner.Y",
+								"\"Unikid\"",
+								"-1",
+								"90"
+							]
+						}
+					],
+					"sid": 590880786268562
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 821984817465441
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "CreateEntity",
+							"sid": 488881185736153,
+							"parameters": [
+								"PlayerSpawnX",
+								"PlayerSpawnY",
+								"\"Unikid\"",
+								"-1",
+								"90"
+							]
+						}
+					],
+					"sid": 626289971678986
+				}
+			]
+		},
+		{
+			"functionName": "AudioPlayDef",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 254285271785202
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 983156252441126,
+					"parameters": {
+						"audio-file": "Antinomy_01",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 730930439353640
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 114872239069880
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "LoadStaticData",
+					"sid": 891363933738342
+				},
+				{
+					"callFunction": "GenerateKeysDictionary",
+					"sid": 706477967085151
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 325011105664631
+				},
+				{
+					"callFunction": "SpawnCollectibles",
+					"sid": 487792485873450
+				},
+				{
+					"callFunction": "CreatePlayer",
+					"sid": 511119389753136
+				},
+				{
+					"callFunction": "AudioPlayDef",
+					"sid": 947350213780198
+				},
+				{
+					"callFunction": "DisplayZoneLabel",
+					"sid": 792300792074181
+				},
+				{
+					"callFunction": "InitSpawners",
+					"sid": 106133317137190
+				}
+			],
+			"sid": 155782947132314
+		},
+		{
+			"eventType": "comment",
+			"text": "Main Update"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 135901977854013
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "DoCamera",
+					"sid": 475439787694337
+				},
+				{
+					"callFunction": "DoSpawners",
+					"sid": 237264293743166
+				},
+				{
+					"callFunction": "DoEntities",
+					"sid": 569592480863241
+				},
+				{
+					"callFunction": "DoBullets",
+					"sid": 877256226328213
+				},
+				{
+					"callFunction": "DoUI",
+					"sid": 150101553384986
+				}
+			],
+			"sid": 430076576670039
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerSpawnX",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "-1",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 360093107213765
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerSpawnY",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "336",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 788135838212319
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collectibles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "GO_Entity",
+							"sid": 881400106988313,
+							"parameters": {
+								"object": "Collectible"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "GO_Entity",
+							"sid": 469987623096984,
+							"parameters": {
+								"instance-variable": "Name",
+								"comparison": 0,
+								"value": "\"Unikid\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collectible",
+							"sid": 550641473435482,
+							"parameters": {
+								"instance-variable": "Collected"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 632135147543563,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Collectible",
+									"sid": 141575832633437,
+									"parameters": {
+										"child": "CollectibleSprite",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "CollectibleSprite",
+									"sid": 356124459389381
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Collectible",
+									"sid": 210608222401069,
+									"parameters": {
+										"instance-variable": "Collected",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 295187481870132
+						}
+					]
+				},
+				{
+					"functionName": "SpawnCollectibles",
+					"functionDescription": "",
+					"functionCategory": "Collectibles",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 513451591203407,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 534009415005692,
+									"parameters": {
+										"object": "Collectible"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Collectible",
+									"sid": 921585775156506,
+									"parameters": {
+										"instance-variable": "Collected"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 645077114935952,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Collectible",
+											"sid": 978657762595115,
+											"parameters": {
+												"instance-variable": "Name",
+												"comparison": 0,
+												"value": "\"SoulShard\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Collectible",
+											"sid": 976808292372147,
+											"parameters": {
+												"object": "Sprite_Glimmer",
+												"layer": "\"Entities\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Collectible",
+											"sid": 381117974431868,
+											"parameters": {
+												"child": "Sprite_Glimmer",
+												"transform-x": false,
+												"transform-y": false,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 492931709375446
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 590050375340840
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Waypoints",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "ActivateWaypoint",
+					"functionDescription": "",
+					"functionCategory": "Waypoints",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "WaypointUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 555789915872564
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Waypoint",
+							"sid": 528023425954343,
+							"parameters": {
+								"unique-id": "WaypointUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 474064792485140,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GO_Waypoint",
+									"sid": 725455067211006,
+									"parameters": {
+										"instance-variable": "KeepX"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 217113148334554,
+									"parameters": {
+										"variable": "PlayerSpawnX",
+										"value": "GO_Entity.X"
+									}
+								}
+							],
+							"sid": 826434604257690
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 721650543663041
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 900610341246122,
+									"parameters": {
+										"variable": "PlayerSpawnX",
+										"value": "GO_Waypoint.GotoX"
+									}
+								}
+							],
+							"sid": 478894017564829
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GO_Waypoint",
+									"sid": 344932411531926,
+									"parameters": {
+										"instance-variable": "KeepY"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 790417635879731,
+									"parameters": {
+										"variable": "PlayerSpawnY",
+										"value": "GO_Entity.Y"
+									}
+								}
+							],
+							"sid": 506838523466725
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 641175979478609
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 814281562562045,
+									"parameters": {
+										"variable": "PlayerSpawnY",
+										"value": "GO_Waypoint.GotoY"
+									}
+								}
+							],
+							"sid": 731664114257268
+						},
+						{
+							"eventType": "variable",
+							"name": "r",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 615719205785700
+						},
+						{
+							"eventType": "variable",
+							"name": "g",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 842874663035405
+						},
+						{
+							"eventType": "variable",
+							"name": "b",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 397482041219204
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 864592856792813,
+									"parameters": {
+										"variable": "r",
+										"value": "GO_Waypoint.NextShaderR"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 908538736792738,
+									"parameters": {
+										"variable": "g",
+										"value": "GO_Waypoint.NextShaderG"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 648910337611317,
+									"parameters": {
+										"variable": "b",
+										"value": "GO_Waypoint.NextShaderB"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "SimpleColorShader",
+									"sid": 272107846261669,
+									"parameters": {
+										"color": "rgbEx255(r, g, b)"
+									}
+								},
+								{
+									"callFunction": "TriggerSceneTransition",
+									"sid": 729375496142338,
+									"parameters": [
+										"GO_Waypoint.UID"
+									]
+								}
+							],
+							"sid": 743472176261132
+						}
+					]
+				}
+			],
+			"sid": 436407232903111
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Data",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "GenerateKeysDictionary",
+					"functionDescription": "",
+					"functionCategory": "Data",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 289344025003477,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 692042423769724,
+									"parameters": {
+										"name": "\"key\"",
+										"start-index": "0",
+										"end-index": "255"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "KeyboardKeys",
+									"sid": 419571560613355,
+									"parameters": {
+										"key": "str(loopindex(\"key\"))",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 788181150896976
+						}
+					]
+				},
+				{
+					"functionName": "LoadStaticData",
+					"functionDescription": "Load static data into dynamic objects for runtime.",
+					"functionCategory": "Data",
+					"functionReturnType": "none",
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Load static data into dynamic objects for runtime."
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 988885415962023,
+							"parameters": {
+								"tag": "\"\"",
+								"file": "Static_TemplateList.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 979190003175901
+						},
+						{
+							"id": "load",
+							"objectClass": "Dynamic_TemplateList",
+							"sid": 737384268692964,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 905855554608078,
+							"parameters": {
+								"tag": "\"\"",
+								"file": "Static_StatusEffectsList.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 573144731965197
+						},
+						{
+							"id": "load",
+							"objectClass": "Dynamic_StatusEffectsList",
+							"sid": 503128759384625,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 340847168928915,
+							"parameters": {
+								"tag": "\"\"",
+								"file": "Static_ZoneNamePerLayout.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 675655753626550
+						},
+						{
+							"id": "load",
+							"objectClass": "Dynamic_ZoneNamePerLayout",
+							"sid": 317430443195987,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 219815211833039,
+							"parameters": {
+								"tag": "\"\"",
+								"file": "Static_EntityAbilitiesList.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 718261325523068
+						},
+						{
+							"id": "load",
+							"objectClass": "Dynamic_EntityAbilitiesList",
+							"sid": 815393238498559,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 604768647375825
+				},
+				{
+					"functionName": "CheckIfDictionaryContainsValue",
+					"functionDescription": "Check a value against each key of a specified dictionary using a for loop.",
+					"functionCategory": "Data",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "dictionaryUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 517022514042118
+						},
+						{
+							"name": "checkForValue",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 206437990399063
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Dictionary",
+							"sid": 441524815559337,
+							"parameters": {
+								"unique-id": "dictionaryUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Check a value against each key of a specified dictionary using a for loop."
+						}
+					],
+					"sid": 239125917418425,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 175334925761021,
+									"parameters": {
+										"variable": "dictionaryUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 147073319135053,
+									"parameters": [
+										"\"CheckIfDictionaryContainsValue\"",
+										"-1",
+										"\"dictionaryUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 387888154091829
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 317834908569063
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 719005487680603,
+									"parameters": {
+										"variable": "checkForValue",
+										"comparison": 0,
+										"value": "\"NULL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 370604323796931,
+									"parameters": [
+										"\"CheckIfDictionaryContainsValue\"",
+										"-1",
+										"\"checkForValue\"",
+										"\"NULL\""
+									]
+								}
+							],
+							"sid": 614202359426153
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 268544359498081
+								}
+							],
+							"actions": [],
+							"sid": 676789361520867,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "match_found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 597385707789995
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each-key",
+											"objectClass": "Dictionary",
+											"sid": 373841318328353
+										}
+									],
+									"actions": [],
+									"sid": 356023169291168,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 694832978601662,
+													"parameters": {
+														"variable": "match_found"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 395222478839058,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-current-value",
+															"objectClass": "Dictionary",
+															"sid": 400594327016372,
+															"parameters": {
+																"comparison": 0,
+																"value": "checkForValue"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 896906259353628,
+															"parameters": {
+																"variable": "match_found",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 217693096898344
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 818081795552516,
+											"parameters": {
+												"variable": "match_found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 943657421866756,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 190191912792710
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 156108016699371,
+											"parameters": {
+												"variable": "match_found"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 404738899664511,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 970111327331577
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "CheckIfDictionaryContainsKey",
+					"functionDescription": "",
+					"functionCategory": "Data",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "dictionaryUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 264876607858700
+						},
+						{
+							"name": "checkForKey",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 554664249947989
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Dictionary",
+							"sid": 219215271025272,
+							"parameters": {
+								"unique-id": "dictionaryUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Check a value against each key of a specified dictionary using a for loop."
+						}
+					],
+					"sid": 610726020982824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 368392906445395,
+									"parameters": {
+										"variable": "dictionaryUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 508627679478932,
+									"parameters": [
+										"\"CheckIfDictionaryContainsKey\"",
+										"-1",
+										"\"dictionaryUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 493721240673775
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 509581847189376
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 205710509172191,
+									"parameters": {
+										"variable": "checkForKey",
+										"comparison": 0,
+										"value": "\"NULL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 602877176710448,
+									"parameters": [
+										"\"CheckIfDictionaryContainsKey\"",
+										"-1",
+										"\"checkForKey\"",
+										"\"NULL\""
+									]
+								}
+							],
+							"sid": 168043013277964
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 981849093220997
+								}
+							],
+							"actions": [],
+							"sid": 570290460173130,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Dictionary",
+											"sid": 706292612307785,
+											"parameters": {
+												"key": "checkForKey"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 580962617809636,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 116931615578198
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 380730196401482
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 351763930846330,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 663711629620538
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 833357314927245
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Overlays",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DoOverlays",
+					"functionDescription": "",
+					"functionCategory": "Overlays",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 497545339382809
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 487544105650488,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 238128509937978,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 149508127596665,
+									"parameters": [
+										"\"DoOverlays\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 189969431449493
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 982381685783832
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 404242398128073,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 982654548290904,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "match_found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 442304227776321
+								},
+								{
+									"eventType": "variable",
+									"name": "match_uid",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 175252952277682
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 788576687778717,
+											"parameters": {
+												"variable": "match_found"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 600059227922766,
+											"parameters": {
+												"object": "Overlay"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 151009666132508,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "GO_Entity",
+													"sid": 578557199455692,
+													"parameters": {
+														"object": "Overlay"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 688994261583530,
+													"parameters": {
+														"variable": "match_found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 234453662477064,
+													"parameters": {
+														"variable": "match_uid",
+														"value": "Overlay.UID"
+													}
+												}
+											],
+											"sid": 571088920963327
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 457247355992792,
+											"parameters": {
+												"variable": "match_found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ShowAllOverlays",
+											"sid": 346942884028117
+										}
+									],
+									"sid": 138548879083271
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 809635478832688,
+											"parameters": {
+												"variable": "match_found"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "HideOverlay",
+											"sid": 146971881129184,
+											"parameters": [
+												"match_uid"
+											]
+										}
+									],
+									"sid": 116952324465324
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "HideOverlay",
+					"functionDescription": "",
+					"functionCategory": "Overlays",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "overlayUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 113504876382273
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 338067987047456,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 578931397970551,
+									"parameters": {
+										"variable": "overlayUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 567548368765547,
+									"parameters": [
+										"\"HideOverlay\"",
+										"-1",
+										"\"overlayUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 678097226772584
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 506802798184621
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Overlay",
+									"sid": 152363937918806,
+									"parameters": {
+										"unique-id": "overlayUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Overlay",
+									"sid": 941671373482560,
+									"parameters": {
+										"instance-variable": "CurrentlyDisplayed",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 235394424606422
+						}
+					]
+				},
+				{
+					"functionName": "ShowAllOverlays",
+					"functionDescription": "",
+					"functionCategory": "Overlays",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 161623405894739,
+							"parameters": {
+								"object": "Overlay"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Overlay",
+							"sid": 860300663391884,
+							"parameters": {
+								"instance-variable": "CurrentlyDisplayed",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 963761702564952
+				}
+			],
+			"sid": 806516121749549
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "LogError_Custom",
+					"functionDescription": "Log a custom error or warning message and specify an error code.",
+					"functionCategory": "Debug",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "calledFrom",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 785949472326553
+						},
+						{
+							"name": "warnOnly",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 131178435381359
+						},
+						{
+							"name": "errorMessage",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 253350960127565
+						},
+						{
+							"name": "errorCode",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 380188434273710
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Log a custom error or warning message and specify an error code."
+						}
+					],
+					"sid": 459242434071193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 672888355468682,
+									"parameters": {
+										"variable": "warnOnly",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 134102108535910,
+									"parameters": {
+										"type": "warn",
+										"message": "\"(\"&calledFrom&\"): \"&errorMessage&\" (code \"&errorCode&\")\""
+									}
+								}
+							],
+							"sid": 566458496113470
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 358697288361310
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 562529690423971,
+									"parameters": {
+										"type": "error",
+										"message": "\"(\"&calledFrom&\"): \"&errorMessage&\" (code \"&errorCode&\")\""
+									}
+								}
+							],
+							"sid": 875979400938502
+						}
+					]
+				},
+				{
+					"functionName": "LogError_InvalidValue",
+					"functionDescription": "Log an error or warning about an invalid value (-1 or NULL usually).",
+					"functionCategory": "Debug",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "calledFrom",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 821901639001926
+						},
+						{
+							"name": "warnOnly",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 767649500962810
+						},
+						{
+							"name": "valueName",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 972318197061964
+						},
+						{
+							"name": "invalidAs",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 895366228092524
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Log an error or warning about an invalid value (-1 or NULL usually)."
+						}
+					],
+					"sid": 653846712149325,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 555676631078373,
+									"parameters": {
+										"variable": "warnOnly",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 996681045296067,
+									"parameters": {
+										"type": "warn",
+										"message": "\"(\"&calledFrom&\"): \"&valueName&\" has not been defined (it's \"&invalidAs&\").\""
+									}
+								}
+							],
+							"sid": 476071512730642
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 420814869906050
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 557542476262306,
+									"parameters": {
+										"type": "error",
+										"message": "\"(\"&calledFrom&\"): \"&valueName&\" is invalid (it's \"&invalidAs&\").\""
+									}
+								}
+							],
+							"sid": 688775116769423
+						}
+					]
+				}
+			],
+			"sid": 276286049767484
+		}
+	],
+	"sid": 973000552899030
+}

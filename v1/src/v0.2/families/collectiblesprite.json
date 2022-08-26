@@ -1,0 +1,11 @@
+{
+	"name": "CollectibleSprite",
+	"plugin-id": "Sprite",
+	"sid": 441328460321636,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Sprite_Glimmer"
+	]
+}

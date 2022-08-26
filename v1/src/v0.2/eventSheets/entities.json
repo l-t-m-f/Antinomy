@@ -1,0 +1,2309 @@
+{
+	"name": "Entities",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "AI"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Collisions"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Spawners"
+		},
+		{
+			"eventType": "variable",
+			"name": "LeftDir",
+			"type": "string",
+			"initialValue": "left",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 136432400054045
+		},
+		{
+			"eventType": "variable",
+			"name": "RightDir",
+			"type": "string",
+			"initialValue": "right",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 164630785823274
+		},
+		{
+			"eventType": "variable",
+			"name": "FrontDir",
+			"type": "string",
+			"initialValue": "front",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 853566175149187
+		},
+		{
+			"eventType": "variable",
+			"name": "BackDir",
+			"type": "string",
+			"initialValue": "back",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 223134866368487
+		},
+		{
+			"eventType": "variable",
+			"name": "UpDir",
+			"type": "string",
+			"initialValue": "up",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 319269640271345
+		},
+		{
+			"eventType": "variable",
+			"name": "DownDir",
+			"type": "string",
+			"initialValue": "down",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 468634392115709
+		},
+		{
+			"eventType": "variable",
+			"name": "StandStance",
+			"type": "string",
+			"initialValue": "stand",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 259345729874505
+		},
+		{
+			"eventType": "variable",
+			"name": "CrouchStance",
+			"type": "string",
+			"initialValue": "crouch",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 780883064796289
+		},
+		{
+			"eventType": "variable",
+			"name": "JumpStance",
+			"type": "string",
+			"initialValue": "jump",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 488006075620207
+		},
+		{
+			"eventType": "variable",
+			"name": "StunStatus",
+			"type": "string",
+			"initialValue": "stun",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 292870829761505
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "GO_Entity",
+					"sid": 812282197899858
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 306933460234466,
+					"parameters": {
+						"tag": "\"createFunctionDone\""
+					}
+				},
+				{
+					"callFunction": "SetStandingState",
+					"sid": 790591147764247,
+					"parameters": [
+						"GO_Entity.UID",
+						"StandStance"
+					]
+				}
+			],
+			"sid": 361955965590928,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "GO_Entity",
+							"sid": 297948404339228,
+							"parameters": {
+								"instance-variable": "Name",
+								"comparison": 1,
+								"value": "\"Unikid\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetMoveDirection",
+							"sid": 282250766950743,
+							"parameters": [
+								"GO_Entity.UID",
+								"RightDir"
+							]
+						},
+						{
+							"id": "set-solid-collision-filter",
+							"objectClass": "GO_Entity",
+							"sid": 616531281006962,
+							"parameters": {
+								"mode": "exclusive",
+								"tags": "\"Enemy\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 909692213545875,
+							"parameters": {
+								"instance-variable": "CurrentHP",
+								"value": "Self.MaxHP"
+							}
+						}
+					],
+					"sid": 842242265980703
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 621112893187792
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetMoveDirection",
+							"sid": 521470779854347,
+							"parameters": [
+								"GO_Entity.UID",
+								"\"Front\""
+							]
+						},
+						{
+							"callFunction": "SetActionState",
+							"sid": 253570454433296,
+							"parameters": [
+								"GO_Entity.UID",
+								"IdleAction"
+							]
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "GO_Entity",
+							"sid": 135436783566755,
+							"parameters": {
+								"layer": "\"_hidden\""
+							}
+						},
+						{
+							"id": "set-ceiling-collision",
+							"objectClass": "GO_Entity",
+							"sid": 644562684741183,
+							"behaviorType": "Controller_Platform",
+							"parameters": {
+								"mode": "preserve-momentum"
+							}
+						}
+					],
+					"sid": 880764591259225
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "GO_Entity",
+							"sid": 947808933885914,
+							"parameters": {
+								"instance-variable": "MovementBehavior",
+								"comparison": 0,
+								"value": "\"Sine\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "InitializeRandomSineHeight",
+							"sid": 128613517768404,
+							"parameters": [
+								"GO_Entity.UID"
+							]
+						}
+					],
+					"sid": 281208924693897
+				}
+			]
+		},
+		{
+			"functionName": "CreateEntity",
+			"functionDescription": "Creates an entity at a specified position based on a specified template.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 110056159617607
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 947163772022948
+				},
+				{
+					"name": "template",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 264595984396946
+				},
+				{
+					"name": "spawnerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 352991380791297
+				},
+				{
+					"name": "initialGravityAngle",
+					"type": "number",
+					"initialValue": "90",
+					"comment": "",
+					"sid": 455125132032242
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Creates an entity at a specified position based on a specified template."
+				}
+			],
+			"sid": 564082964392975,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 912956796187747,
+							"parameters": {
+								"variable": "x",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 251385416100981,
+							"parameters": [
+								"\"CreateEntity\"",
+								"-1",
+								"\"x\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 862259901313625
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 758670277470171
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 440105369920842,
+							"parameters": {
+								"variable": "y",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 895225481034729,
+							"parameters": [
+								"\"CreateEntity\"",
+								"-1",
+								"\"y\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 959047839784733
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 348771983467634
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 723902401080513,
+							"parameters": {
+								"variable": "template",
+								"comparison": 0,
+								"value": "\"NULL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 590991365320080,
+							"parameters": [
+								"\"CreateEntity\"",
+								"-1",
+								"\"template\"",
+								"\"NULL\""
+							]
+						}
+					],
+					"sid": 490135332143285
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 435675730197449
+						}
+					],
+					"actions": [],
+					"sid": 768692653508790,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 308753755544238,
+									"parameters": {
+										"first-value": "Functions.CheckIfDictionaryContainsValue(Dynamic_TemplateList.UID, template)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 981734982994404,
+									"parameters": {
+										"object-to-create": "GO_Entity",
+										"layer": "\"Entities\"",
+										"x": "x",
+										"y": "y",
+										"create-hierarchy": true,
+										"template-name": "template"
+									}
+								},
+								{
+									"id": "set-angle-of-gravity",
+									"objectClass": "GO_Entity",
+									"sid": 148915889844582,
+									"behaviorType": "Controller_Platform",
+									"parameters": {
+										"angle": "initialGravityAngle"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "GO_Entity",
+									"sid": 965725096402337,
+									"parameters": {
+										"angle": "GO_Entity.Controller_Platform.GravityAngle-90"
+									}
+								}
+							],
+							"sid": 474943736125270,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 353519483212905,
+											"parameters": {
+												"variable": "spawnerUID",
+												"comparison": 0,
+												"value": "\"-1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 178714095798238,
+											"parameters": [
+												"\"CreateEntity\"",
+												"1",
+												"\"spawnerUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 304436074783889
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 570017186149734
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 685791431848165,
+											"parameters": {
+												"unique-id": "spawnerUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-child",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 769897306625753,
+											"parameters": {
+												"child": "GO_Entity",
+												"transform-x": false,
+												"transform-y": false,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 318566764228542
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 727547570702538,
+											"parameters": {
+												"tag": "\"createFunctionDone\""
+											}
+										}
+									],
+									"sid": 574539027220584
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 966294184159210
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_Custom",
+									"sid": 168949082704339,
+									"parameters": [
+										"\"CreateEntity\"",
+										"-1",
+										"\"Template '\"&template&\"' is not part of the dynamic template list.\"",
+										"096"
+									]
+								}
+							],
+							"sid": 139539314046039
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "InitializeRandomSineHeight",
+			"functionDescription": "",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 242038157006980
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 244179645326451,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 572500626209541,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 769673838189197,
+							"parameters": [
+								"\"InitializeRandomSineHeight\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 398395973694505
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 346207607734309
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 280477718004119,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cycle-position",
+							"objectClass": "GO_Entity",
+							"sid": 785617329371544,
+							"behaviorType": "Controller_Sine1",
+							"parameters": {
+								"cycle-position": "random(0,1)"
+							}
+						}
+					],
+					"sid": 283093711295618
+				}
+			]
+		},
+		{
+			"functionName": "DoEntities",
+			"functionDescription": "Loop through all Entity game objects and call the generic update.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 292176282443873,
+					"parameters": {
+						"object": "GO_Entity"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Loops through all Entity game objects and call the generic update."
+				},
+				{
+					"callFunction": "DoEntity",
+					"sid": 868146567298737,
+					"parameters": [
+						"GO_Entity.UID"
+					]
+				}
+			],
+			"sid": 606548306960862
+		},
+		{
+			"functionName": "DoEntity",
+			"functionDescription": "Updates a specified Entity game object with the generic entity update and according to its name.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 203606767954640
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Updates a specified Entity game object with the generic entity update and according to its name."
+				}
+			],
+			"sid": 718837998004601,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 531142155124002,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 692230875578416,
+							"parameters": [
+								"\"DoEntity\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 484836597745393
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 833575244673175
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 427405286620171,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 797180896201547,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GO_Entity",
+									"sid": 122409992006830,
+									"parameters": {
+										"instance-variable": "Name",
+										"comparison": 0,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "DoPlayer",
+									"sid": 162077654995428,
+									"parameters": [
+										"entityUID"
+									]
+								}
+							],
+							"sid": 731375363336197
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 499671028195821
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "DoAI",
+									"sid": 739462241488906,
+									"parameters": [
+										"GO_Entity.UID"
+									]
+								}
+							],
+							"sid": 950903787751094
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "SetActionState",
+			"functionDescription": "Sets an entity's action state.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 406178184229475
+				},
+				{
+					"name": "stateName",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 664756495533212
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Sets an entity's action state."
+				}
+			],
+			"sid": 260255011528128,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 222235509732699,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 969743454393254,
+							"parameters": [
+								"\"UpdateActionState\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 404327342533315
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 382869982418982
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 251760091396467,
+							"parameters": {
+								"variable": "stateName",
+								"comparison": 0,
+								"value": "\"NULL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 532352850980540,
+							"parameters": [
+								"\"UpdateActionState\"",
+								"-1",
+								"\"stateName\"",
+								"\"NULL\""
+							]
+						}
+					],
+					"sid": 315298606857059
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 144317528266140
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 104344813152418,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 362440575152697,
+							"parameters": {
+								"instance-variable": "ActionState",
+								"value": "stateName"
+							}
+						}
+					],
+					"sid": 225444531698666
+				}
+			]
+		},
+		{
+			"functionName": "SetStandingState",
+			"functionDescription": "Sets an entity's standing state.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 341286620351825
+				},
+				{
+					"name": "stateName",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 663018706570222
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Sets an entity's standing state."
+				}
+			],
+			"sid": 737158897465281,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 597081580507409,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 613898550264235,
+							"parameters": [
+								"\"UpdateStandingState\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 921677159269321
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 761047446535644
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 798353539643016,
+							"parameters": {
+								"variable": "stateName",
+								"comparison": 0,
+								"value": "\"NULL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 420583084256871,
+							"parameters": [
+								"\"UpdateStandingState\"",
+								"-1",
+								"\"stateName\"",
+								"\"NULL\""
+							]
+						}
+					],
+					"sid": 725116394657017
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 611589235040054
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 268940082144197,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 142784990462833,
+							"parameters": {
+								"instance-variable": "StandingState",
+								"value": "stateName"
+							}
+						}
+					],
+					"sid": 194164408763357
+				}
+			]
+		},
+		{
+			"functionName": "SetMoveDirection",
+			"functionDescription": "Sets an entity's move direction.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 638301197960704
+				},
+				{
+					"name": "direction",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 141514488689316
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Sets an entity's move direction."
+				}
+			],
+			"sid": 528672903283459,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 649529043386994,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 362418347636009,
+							"parameters": [
+								"\"UpdateMoveDirection\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 510630658828407
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 548850492530421
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 347424128554015,
+							"parameters": {
+								"variable": "direction",
+								"comparison": 0,
+								"value": "\"NULL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 363601571306956,
+							"parameters": [
+								"\"UpdateMoveDirection\"",
+								"-1",
+								"\"direction\"",
+								"\"NULL\""
+							]
+						}
+					],
+					"sid": 740911748734766
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 475678406285697
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 902951505961641,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 227503333338091,
+							"parameters": {
+								"instance-variable": "MoveDirection",
+								"value": "direction"
+							}
+						}
+					],
+					"sid": 700410885068023
+				}
+			]
+		},
+		{
+			"functionName": "SetFacingDirection",
+			"functionDescription": "Sets an entity's facing direction.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 961559868629908
+				},
+				{
+					"name": "direction",
+					"type": "string",
+					"initialValue": "NULL",
+					"comment": "",
+					"sid": 949330839305773
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Sets an entity's facing direction."
+				}
+			],
+			"sid": 913651327609977,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 934951854241650,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 797233378166023,
+							"parameters": [
+								"\"UpdateFacingDirection\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 815216243115257
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 356623358040094
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 491257646127356,
+							"parameters": {
+								"variable": "direction",
+								"comparison": 0,
+								"value": "\"NULL\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 434400859634434,
+							"parameters": [
+								"\"UpdateFacingDirection\"",
+								"-1",
+								"\"direction\"",
+								"\"NULL\""
+							]
+						}
+					],
+					"sid": 142700082138678
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 288443771480693
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 200346449736829,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 330394541985406,
+							"parameters": {
+								"instance-variable": "LastMovedDirection",
+								"value": "direction"
+							}
+						}
+					],
+					"sid": 114202548537188
+				}
+			]
+		},
+		{
+			"functionName": "SetJumpDelay",
+			"functionDescription": "Sets an entity's jump delay.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 994762802708810
+				},
+				{
+					"name": "delayLength",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 225967548753054
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Sets an entity's jump delay."
+				}
+			],
+			"sid": 281771730093038,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 737597170987657,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 908067040555725,
+							"parameters": [
+								"\"UpdateJumpDelay\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 949630438346880
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 321466492214227
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 728993659360583,
+							"parameters": {
+								"variable": "delayLength",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 895370047067485,
+							"parameters": [
+								"\"UpdateJumpDelay\"",
+								"-1",
+								"\"delayLength\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 205856091708750
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 107194798815871
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 530516713700536,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "GO_Entity",
+							"sid": 753182888363339,
+							"parameters": {
+								"instance-variable": "JumpDelay",
+								"value": "delayLength"
+							}
+						}
+					],
+					"sid": 251879223776230
+				}
+			]
+		},
+		{
+			"functionName": "DestroyEntity",
+			"functionDescription": "Destroys a specified entity and signal to its parent spawner to resume spawning if need be.",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 187730594770530
+				},
+				{
+					"name": "destroyType",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 690032618373348
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Destroys a specified entity and signal to its parent spawner to resume spawning if need be."
+				}
+			],
+			"sid": 809292085945579,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 163355571103055,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 900062413146901,
+							"parameters": [
+								"\"DestroyEntity\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 379015846515021
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 662972159348169
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 376401997820708,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 949856905846309,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-parent",
+									"objectClass": "GO_Entity",
+									"sid": 639565961931193
+								}
+							],
+							"actions": [],
+							"sid": 304053851812018,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "GO_Entity",
+											"sid": 809279064855699,
+											"parameters": {
+												"parent": "GO_EnemySpawner",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 181234068695142,
+											"parameters": {
+												"instance-variable": "Spawned",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 552830282276661
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 542707755568451,
+									"parameters": {
+										"variable": "destroyType",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 585981210647143,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "GO_Entity",
+											"sid": 839343518580058,
+											"parameters": {
+												"instance-variable": "PhaseThrough"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-height",
+											"objectClass": "GO_Entity",
+											"sid": 662785985905718,
+											"parameters": {
+												"height": "4"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "GO_Entity",
+											"sid": 416429702971227,
+											"parameters": {
+												"width": "Self.Width*1.2"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 463833400783563,
+											"parameters": {
+												"seconds": "0.25"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "GO_Entity",
+											"sid": 529508449992575
+										}
+									],
+									"sid": 709814094848921
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 146373934544413
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "GO_Entity",
+											"sid": 470097445279120
+										}
+									],
+									"sid": 797728364657808
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 243152608139749,
+									"parameters": {
+										"variable": "destroyType",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 819735784881405,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 517532394393054
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Entity Animator",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DoAnimator",
+					"functionDescription": "",
+					"functionCategory": "Entities, Animator",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 288604380772303
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 196553362089992,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 419784344918439,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 915489194187943,
+									"parameters": [
+										"\"DoPlayerAnimator\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 109146054159383
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 137684157545730
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 353474216658197,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "GO_Entity",
+									"sid": 836026191405866,
+									"parameters": {
+										"child": "EntitySprite",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 742639305549069,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 543962636733421,
+											"parameters": {
+												"instance-variable": "Name",
+												"comparison": 0,
+												"value": "\"Unikid\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 143423711283062,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GO_Entity",
+													"sid": 932356251335374,
+													"parameters": {
+														"instance-variable": "CurrentNegativeEffect",
+														"comparison": 0,
+														"value": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "EntitySprite",
+													"sid": 350906745850054,
+													"parameters": {
+														"animation": "GO_Entity.StandingState&\"_\"&GO_Entity.ActionState&\"_\"&GO_Entity.MoveDirection",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 294944700856948
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 193874786801411,
+													"parameters": {
+														"first-value": "Dynamic_StatusEffectsList.Get(str(GO_Entity.CurrentNegativeEffect))",
+														"comparison": 0,
+														"second-value": "StunStatus"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "EntitySprite",
+													"sid": 719321389926517,
+													"parameters": {
+														"animation": "\"stun_\"&GO_Entity.LastMovedDirection",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 824261254121965
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 998328231618062
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "EntitySprite",
+											"sid": 701283522382556,
+											"parameters": {
+												"animation": "GO_Entity.ActionState&\"_\"&GO_Entity.MoveDirection",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 564821517422275
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "mirroring",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "SetSpriteMirroring",
+							"functionDescription": "",
+							"functionCategory": "Entities, Animator",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 355319720320950
+								},
+								{
+									"name": "mirrorState",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 934126811927166
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 389854994927859,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 526222137102584,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 817567077485000,
+											"parameters": [
+												"\"SetSpriteMirroring\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 956067500862123
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 409089143395692
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 683924574688488,
+											"parameters": {
+												"variable": "mirrorState",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 747879485614798,
+											"parameters": [
+												"\"SetSpriteMirroring\"",
+												"-1",
+												"\"mirrorState\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 828956649027946
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 284450522286305
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 781706705501165,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "GO_Entity",
+											"sid": 981104716399065,
+											"parameters": {
+												"child": "EntitySprite",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 828438167720714,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 579840037436624,
+													"parameters": {
+														"variable": "mirrorState",
+														"comparison": 0,
+														"value": "0"
+													}
+												},
+												{
+													"id": "is-mirrored",
+													"objectClass": "EntitySprite",
+													"sid": 944813649795081
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "EntitySprite",
+													"sid": 834679002162348,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												}
+											],
+											"sid": 551900385091011
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 427066656845204
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 131732184720284,
+													"parameters": {
+														"variable": "mirrorState",
+														"comparison": 0,
+														"value": "1"
+													}
+												},
+												{
+													"id": "is-mirrored",
+													"objectClass": "EntitySprite",
+													"sid": 481777432995750,
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "EntitySprite",
+													"sid": 356996166518433,
+													"parameters": {
+														"state": "mirrored"
+													}
+												}
+											],
+											"sid": 141762904266715
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 954495945268791
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "flash",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "TryFlashSprite",
+							"functionDescription": "",
+							"functionCategory": "Entities, Animator",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 355997265303722
+								},
+								{
+									"name": "onTime",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 664922560905468
+								},
+								{
+									"name": "offTime",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 899572813136666
+								},
+								{
+									"name": "duration",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 715174321869137
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 641792120452504,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 455169283717245,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 129856874606723,
+											"parameters": [
+												"\"TryFlashSprite\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 307542916539975
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 348641964880703
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 366445116353511,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "GO_Entity",
+											"sid": 499568586696901,
+											"parameters": {
+												"child": "EntitySprite",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 846777759960812,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-flashing",
+													"objectClass": "EntitySprite",
+													"sid": 254176422800455,
+													"behaviorType": "Flash",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "FlashSprite",
+													"sid": 432504533283441,
+													"parameters": [
+														"entityUID",
+														"onTime",
+														"offTime",
+														"duration"
+													]
+												}
+											],
+											"sid": 903656577285289
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "FlashSprite",
+							"functionDescription": "",
+							"functionCategory": "Entities, Animator",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 573524737456670
+								},
+								{
+									"name": "onTime",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 630583069534646
+								},
+								{
+									"name": "offTime",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 489452222747152
+								},
+								{
+									"name": "duration",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 507275024686786
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 511840821307757,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 610972696031961,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 899970592501189,
+											"parameters": [
+												"\"FlashSprite\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 474114013708423
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 844073762553365
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 824612998701745,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "GO_Entity",
+											"sid": 368653531314735,
+											"parameters": {
+												"child": "EntitySprite",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "flash",
+											"objectClass": "EntitySprite",
+											"sid": 139647997393572,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "onTime",
+												"off-time": "offTime",
+												"duration": "duration"
+											}
+										}
+									],
+									"sid": 656491674941402
+								}
+							]
+						}
+					],
+					"sid": 375215400001540
+				}
+			],
+			"sid": 576047726609591
+		}
+	],
+	"sid": 485743256580199
+}

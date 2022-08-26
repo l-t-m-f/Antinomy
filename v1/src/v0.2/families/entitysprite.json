@@ -1,0 +1,23 @@
+{
+	"name": "EntitySprite",
+	"plugin-id": "Sprite",
+	"sid": 821468323158770,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 136946942033934
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"PlayerDebugSprite",
+		"OH_Letters3x",
+		"Sprite_GreenSnail",
+		"Sprite_PinkSnail",
+		"Sprite_Beetle",
+		"Sprite_ElectricSnail",
+		"Sprite_BrightSkullSpitter"
+	]
+}

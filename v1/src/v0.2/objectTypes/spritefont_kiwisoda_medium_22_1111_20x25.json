@@ -1,0 +1,31 @@
+{
+	"name": "SpriteFont_KiwiSoda_Medium_22_1111_20x25",
+	"plugin-id": "Spritefont2",
+	"sid": 650515163057756,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "SineAnim",
+			"sid": 545812743958643
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "replacecolor",
+			"name": "ReplaceColor"
+		}
+	],
+	"image": {
+		"width": 512,
+		"height": 128,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8248681,
+		"useCollisionPoly": true
+	}
+}

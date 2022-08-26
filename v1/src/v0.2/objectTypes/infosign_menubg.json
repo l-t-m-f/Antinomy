@@ -1,0 +1,49 @@
+{
+	"name": "InfoSign_MenuBG",
+	"plugin-id": "Sprite",
+	"sid": 175307113369877,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 258,
+						"height": 146,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4302961,
+						"collisionPoly": {
+							"points": [
+								0.003875968992248062,
+								0,
+								0.9961240310077519,
+								0,
+								0.9961240310077519,
+								1,
+								0.003875968992248062,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 237763093364401,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

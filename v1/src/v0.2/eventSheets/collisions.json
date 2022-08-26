@@ -1,0 +1,826 @@
+{
+	"name": "Collisions",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GO_Entity",
+					"sid": 964766144901741,
+					"parameters": {
+						"object": "Bounce"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "GO_Entity",
+					"sid": 577131728801078,
+					"parameters": {
+						"instance-variable": "Name",
+						"comparison": 0,
+						"value": "\"Unikid\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "TryBounce",
+					"sid": 741561387469987,
+					"parameters": [
+						"GO_Entity.UID",
+						"Bounce.UID",
+						false
+					]
+				}
+			],
+			"sid": 410389296951315
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GO_Entity",
+					"sid": 162884100431378,
+					"parameters": {
+						"object": "GO_Entity"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 296475416833336,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "player_collision",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 504241193584956
+				},
+				{
+					"eventType": "variable",
+					"name": "player_uid",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 941555126731619
+				},
+				{
+					"eventType": "variable",
+					"name": "target_uid",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 338584245377831
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 799929481214022,
+							"parameters": {
+								"object": "GO_Entity",
+								"expression": "GO_Entity.Name",
+								"comparison": 0,
+								"value": "\"Unikid\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 906245393258453,
+							"parameters": {
+								"variable": "player_collision",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 113346986252971,
+							"parameters": {
+								"variable": "player_uid",
+								"value": "GO_Entity.UID"
+							}
+						}
+					],
+					"sid": 582883949404715
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 105360350139640,
+							"parameters": {
+								"variable": "player_collision"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 821525899263913,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 997760060570387,
+									"parameters": {
+										"object": "GO_Entity",
+										"expression": "GO_Entity.Name",
+										"comparison": 1,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 316638277772585,
+									"parameters": {
+										"variable": "target_uid",
+										"value": "GO_Entity.UID"
+									}
+								}
+							],
+							"sid": 779425421176595,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "GO_Entity",
+											"sid": 504035289354411,
+											"parameters": {
+												"instance-variable": "Immune"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "TryBounce",
+											"sid": 692847368523768,
+											"parameters": [
+												"player_uid",
+												"target_uid",
+												true
+											]
+										}
+									],
+									"sid": 490912978705818
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-tweens-finished",
+					"objectClass": "Sprite_BounceShroom",
+					"sid": 991646973878296,
+					"behaviorType": "Tween"
+				},
+				{
+					"id": "pick-parent",
+					"objectClass": "Sprite_BounceShroom",
+					"sid": 669542719002478,
+					"parameters": {
+						"parent": "GO_BounceShroom",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "GO_BounceShroom",
+					"sid": 927831715246582,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 203125423922328
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GO_Entity",
+					"sid": 723320978395215,
+					"parameters": {
+						"object": "GO_Slope"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "GO_Entity",
+					"sid": 215886623710649,
+					"parameters": {
+						"instance-variable": "Name",
+						"comparison": 0,
+						"value": "\"Unikid\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "GO_Slope",
+					"sid": 498623515567188,
+					"parameters": {
+						"instance-variable": "SlopeDirection",
+						"comparison": 1,
+						"value": "GO_Entity.MoveDirection"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "TryRollJump",
+					"sid": 182734964362355,
+					"parameters": [
+						"GO_Entity.UID"
+					]
+				}
+			],
+			"sid": 291256559515913
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GO_Entity",
+					"sid": 128274873853520,
+					"parameters": {
+						"object": "TEST_GO_Damager"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GO_Entity",
+					"sid": 204279230600313,
+					"parameters": {
+						"object": "GO_ElectricStorm"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 166061464445996,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "GO_Entity",
+							"sid": 246633989643319,
+							"parameters": {
+								"instance-variable": "Name",
+								"comparison": 0,
+								"value": "\"Unikid\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TryStun",
+							"sid": 658847665059648,
+							"parameters": [
+								"GO_Entity.UID"
+							]
+						}
+					],
+					"sid": 966098590483503
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"functionName": "TryBounce",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 127392356086667
+				},
+				{
+					"name": "bounceUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 343833833616115
+				},
+				{
+					"name": "canHarm",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 951292853561781
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 997940643837528,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 584637873131441,
+							"parameters": {
+								"variable": "playerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 808695004029975
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 239661419339437
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 352895276708262,
+							"parameters": {
+								"variable": "bounceUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 152634716441412
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 180211816990215
+						}
+					],
+					"actions": [],
+					"sid": 884941290252397,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 594355138773593,
+									"parameters": {
+										"unique-id": "bounceUID"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GO_Entity",
+									"sid": 652892852810790,
+									"parameters": {
+										"instance-variable": "PhaseThrough"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "DealDamage",
+									"sid": 124333199945219,
+									"parameters": [
+										"bounceUID"
+									]
+								}
+							],
+							"sid": 842280353133349
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 454313291231323
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 840504919169903,
+									"parameters": {
+										"unique-id": "playerUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 569125547412991,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-falling",
+											"objectClass": "GO_Entity",
+											"sid": 933356385718193,
+											"behaviorType": "Controller_Platform"
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Bounce",
+											"sid": 458549302368853,
+											"parameters": [
+												"bounceUID"
+											]
+										}
+									],
+									"sid": 141863080211687
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 870279933008567
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 965559375203668,
+											"parameters": {
+												"variable": "canHarm"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "TryStun",
+											"sid": 390552887801565,
+											"parameters": [
+												"playerUID"
+											]
+										}
+									],
+									"sid": 549780112425185
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Bounce",
+			"functionDescription": "",
+			"functionCategory": "Bounce",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "bounceUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 803631873721522
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 815699540196504,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 889878590306692,
+							"parameters": {
+								"variable": "bounceUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 718163299847838,
+							"parameters": [
+								"\"TriggerBounce\"",
+								"-1",
+								"\"bounceUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 559768239200059
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 703235996482711
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 225009288489488,
+							"parameters": {
+								"type": "log",
+								"message": "bounceUID"
+							}
+						}
+					],
+					"sid": 945190756724820,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_BounceShroom",
+									"sid": 152884010449577,
+									"parameters": {
+										"unique-id": "bounceUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "GO_BounceShroom",
+									"sid": 924157363832492,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 603624788930236,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "GO_BounceShroom",
+											"sid": 226610202082363,
+											"parameters": {
+												"child": "Sprite_BounceShroom",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "Sprite_BounceShroom",
+											"sid": 654024291018641,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"width\"",
+												"property": "offsetWidth",
+												"end-value": "32",
+												"time": "0.2",
+												"ease": "easeinsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "yes"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Sprite_BounceShroom",
+											"sid": 428844104969747,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"height\"",
+												"property": "offsetHeight",
+												"end-value": "8",
+												"time": "0.2",
+												"ease": "easeinsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "yes"
+											}
+										}
+									],
+									"sid": 941006866453347
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Carapace",
+									"sid": 756265283370190,
+									"parameters": {
+										"unique-id": "bounceUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "StompCarapace",
+									"sid": 886541580529441,
+									"parameters": [
+										"bounceUID"
+									]
+								}
+							],
+							"sid": 568129263261344
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 566841380169122,
+									"parameters": {
+										"unique-id": "bounceUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "DealDamage",
+									"sid": 879537377819764,
+									"parameters": [
+										"bounceUID"
+									]
+								}
+							],
+							"sid": 257699268435169
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 473037273522117,
+									"parameters": {
+										"object": "GO_Entity",
+										"expression": "GO_Entity.Name",
+										"comparison": 0,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 742266597979294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_BounceShroom",
+											"sid": 984396916173152,
+											"parameters": {
+												"unique-id": "bounceUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 114731786622508,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "GO_Entity",
+											"sid": 401696386234386,
+											"parameters": {
+												"instance-variable": "JumpCurrentBoost",
+												"value": "150"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "GO_Entity",
+											"sid": 919794653063132,
+											"parameters": {
+												"instance-variable": "JumpRemaining",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "Jump",
+											"sid": 308466657658557,
+											"parameters": [
+												"GO_Entity.UID"
+											]
+										}
+									],
+									"sid": 793457455756117
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 733295541809919
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 217421139769912,
+											"parameters": {
+												"seconds": "0.05"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "GO_Entity",
+											"sid": 321562073441995,
+											"parameters": {
+												"instance-variable": "JumpCurrentBoost",
+												"value": "50"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "GO_Entity",
+											"sid": 727898120304917,
+											"parameters": {
+												"instance-variable": "JumpRemaining",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "Jump",
+											"sid": 831914891533869,
+											"parameters": [
+												"GO_Entity.UID"
+											]
+										}
+									],
+									"sid": 912710793614878
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 419737928030744
+}

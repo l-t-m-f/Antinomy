@@ -1,0 +1,102 @@
+{
+	"name": "GO_Proj",
+	"plugin-id": "Sprite",
+	"sid": 773491092010043,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Faction",
+			"type": "number",
+			"desc": "",
+			"sid": 896751058758046
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 762340193575184
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5987333,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.25,
+								0.25,
+								0,
+								0.75,
+								0,
+								1,
+								0.25,
+								1,
+								0.75,
+								0.75,
+								1,
+								0.25,
+								1,
+								0,
+								0.75
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2664433,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.25,
+								0.25,
+								0,
+								0.75,
+								0,
+								1,
+								0.25,
+								1,
+								0.75,
+								0.75,
+								1,
+								0.25,
+								1,
+								0,
+								0.75
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 605535663762231,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			}
+		],
+		"subfolders": []
+	}
+}

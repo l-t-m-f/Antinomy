@@ -1,0 +1,24 @@
+{
+	"name": "LineOfSight",
+	"plugin-id": "Sprite",
+	"sid": 106569869896598,
+	"instanceVariables": [
+		{
+			"name": "LineOfSight_HasLOS",
+			"type": "boolean",
+			"desc": "",
+			"sid": 506994654034551
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 344576254955459
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

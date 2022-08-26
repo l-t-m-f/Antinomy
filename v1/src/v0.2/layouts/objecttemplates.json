@@ -1,0 +1,8092 @@
+{
+	"name": "ObjectTemplates",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Text",
+					"properties": {
+						"text": "NULL",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 2,
+					"instanceVariables": {
+						"Type": "NULL",
+						"PlaceOnDebugLayer": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 14.892903655653171,
+						"y": 7.78283971933412,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "HTMLButton",
+					"properties": {
+						"type": "button",
+						"text": "NULL",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": ""
+					},
+					"uid": 3,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 12.0357395351012,
+						"y": 54.10312807841261,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "Tilemap_Level",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 6,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 18,
+							"height": 9,
+							"max-width": 108,
+							"max-height": 27,
+							"data": "2916x1"
+						},
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 258,
+						"y": 141,
+						"width": 288,
+						"height": 144,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Neutral",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "NULL",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": -1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": -1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "NULL",
+						"AIType": -1,
+						"Child1": "NULL",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "NULL",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"jump-strength": 0,
+								"gravity": 0,
+								"max-fall-speed": 0,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 22.582338097426998,
+						"y": 111.30967808746709,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Tilemap_Apperance",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 33,
+					"instanceVariables": {},
+					"behaviors": {},
+					"ownData": {
+						"tilemapData": {
+							"width": 17,
+							"height": 8,
+							"max-width": 27,
+							"max-height": 14,
+							"data": "378x0"
+						},
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 308,
+						"y": 150,
+						"width": 275,
+						"height": 143,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_GreenSnail",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "DEFAULT",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 247,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 43,
+						"uid": 247,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 79,
+						"y": 116,
+						"width": 29,
+						"height": 22,
+						"originX": 0.5172413793103449,
+						"originY": 0.7727272727272727,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Carapace",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 44,
+					"instanceVariables": {
+						"RemainingDuration": -1
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 43,
+						"uid": 44,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 84,
+						"y": 116,
+						"width": 13,
+						"height": 14,
+						"originX": 1.3846153846153846,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 43,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Platform",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "GreenSnail",
+						"AIType": 0,
+						"Child1": "Carapace",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 8,
+								"acceleration": 4,
+								"deceleration": 5,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "GreenSnail",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 43,
+						"children": [
+							{
+								"uid": 44,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 247,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 79,
+						"y": 114,
+						"width": 24,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_EnemySpawner",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"SpawnedEnemy": "NULL",
+						"Spawned": false,
+						"SpawnerGravityAngle": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 112,
+						"y": 65,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PlayerDebugSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stand_idle_front",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 11,
+						"uid": 51,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 43.046073489410304,
+						"y": 272.6903219125329,
+						"width": 22,
+						"height": 29,
+						"originX": 0.5,
+						"originY": 0.9310344827586207,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_ClimbAnchor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {
+						"SnapToX": -1,
+						"SnapToY": -1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 96,
+								"acceleration": 900,
+								"deceleration": 1000,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": true,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 201,
+						"y": 131,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Asset_Doorway",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -49,
+						"y": 112,
+						"width": 16,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Waypoint",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 63,
+					"instanceVariables": {
+						"Goto": "gs001_Boonies",
+						"GotoX": 48,
+						"GotoY": 224,
+						"KeepX": false,
+						"KeepY": true,
+						"BufferingCalled": false,
+						"NextShaderR": -1,
+						"NextShaderG": -1,
+						"NextShaderB": -1
+					},
+					"behaviors": {},
+					"world": {
+						"x": -69,
+						"y": 112,
+						"width": 16,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_PlayerSlingshotChargeMeter",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 11,
+						"uid": 81,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 43,
+						"y": 264,
+						"width": 48,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5833333333333334,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Friendly",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 11,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": 1,
+						"MovementBehavior": "NULL",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": -1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": -1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": 412,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "Unikid",
+						"AIType": -1,
+						"Child1": "NULL",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "NULL",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 102,
+								"acceleration": 900,
+								"deceleration": 1000,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 50,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 96,
+								"acceleration": 900,
+								"deceleration": 1000,
+								"directions": "dir-4",
+								"set-angle": "no",
+								"default-controls": true,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Unikid",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 11,
+						"children": [
+							{
+								"uid": 51,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 81,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 82,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 83,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 43,
+						"y": 264,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_PlayerSlingshotAim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 82,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 11,
+						"uid": 82,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 43,
+						"y": 264,
+						"width": 16,
+						"height": 16,
+						"originX": -1,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "NULL",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 6,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7333333333333333,
+							1,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "bottom-left"
+					},
+					"uid": 83,
+					"instanceVariables": {
+						"Type": "PlayerDebugInfobox",
+						"PlaceOnDebugLayer": true
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 11,
+						"uid": 83,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 43,
+						"y": 244,
+						"width": 78,
+						"height": 46,
+						"originX": 0,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_InfoHolder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 84,
+					"instanceVariables": {
+						"TextInfo": "NULL"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 227,
+						"y": 194,
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_PostSign",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Variant",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 85,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 236,
+						"y": 185,
+						"width": 18,
+						"height": 18,
+						"originX": 0.05555555555555555,
+						"originY": 0.05555555555555555,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TEMP_SpriteFont",
+					"properties": {
+						"text": "NULL",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 0.75,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 107,
+					"instanceVariables": {
+						"Type": "NULL"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 245,
+						"y": 11,
+						"width": 112,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0.9686274509803922,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "HubParticle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Variant",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 116,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"Screen": {
+							"parameters": {}
+						},
+						"GlowHorizontal": {
+							"parameters": {
+								"intensity": 0.25
+							}
+						},
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.25
+							}
+						}
+					},
+					"world": {
+						"x": 3,
+						"y": -37,
+						"width": 1,
+						"height": 1,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Particles",
+					"properties": {
+						"rate": 50,
+						"spray-cone": 60,
+						"type": "continuous-spray",
+						"object": -1,
+						"live-preview": false,
+						"speed": 200,
+						"size": 32,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": -150,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 1
+					},
+					"uid": 117,
+					"instanceVariables": {
+						"Type": "NULL"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 22,
+						"y": -34,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 4,
+					"instanceVariables": {
+						"CurrentState": -1,
+						"Locked": true,
+						"BaseR": -1,
+						"BaseG": -1,
+						"BaseB": -1,
+						"UseSelector": true,
+						"InvisibleWhenLocked": false,
+						"MainColor": "NULL",
+						"SecondaryColor": "NULL",
+						"ActivationEffect": "NULL"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 4,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 169,
+						"y": -64,
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Proj",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 132,
+					"instanceVariables": {
+						"ShooterUID": -1,
+						"Faction": 0
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": true,
+								"enabled": false
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						}
+					},
+					"world": {
+						"x": -30,
+						"y": 57,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteFont_KiwiSoda_Medium_22_1111_20x25",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"character-width": 20,
+						"character-height": 25,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "[[6,\" \"],[5,\".,;:'|\"],[7,\"Iil!`\"],[8,\"j1()[°\"],[9,\"rt-\\\"]\\/\"],[11,\"hopqsuvy029*$\"],[12,\"DNUXabcdeknx45678?~+=<>\"],[13,\"BCEFGHKLMOPQSVWYfgwz3&€\"],[15,\"JRTZm_#£\"],[16,\"A%\"],[18,\"@\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 134,
+					"instanceVariables": {
+						"Type": "NULL"
+					},
+					"behaviors": {
+						"SpriteFontFade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"SineAnim": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 400,
+						"y": 127,
+						"width": 106,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_SoulShard",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 169,
+					"instanceVariables": {
+						"Name": "SoulShard",
+						"Collected": false,
+						"RefreshAfter": -1
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "SoulShard",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "Collected",
+												"state": true
+											},
+											{
+												"iv": "RefreshAfter",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Persist",
+										"state": []
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"world": {
+						"x": 195,
+						"y": 102,
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_Glimmer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 170,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 0.67,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 3,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
+					"world": {
+						"x": 215,
+						"y": 102,
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Slope",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 62,
+					"instanceVariables": {
+						"SlopeDirection": "NULL"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 284,
+						"y": 125,
+						"width": 48,
+						"height": 48,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OverworldMapSpot",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 178,
+					"instanceVariables": {
+						"SpotID": -1,
+						"Neighbor_Top": -1,
+						"Neighbor_Left": -1,
+						"Neighbor_Down": -1,
+						"Neighbor_Right": -1,
+						"MapID": -1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 320,
+						"y": -73,
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							0,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Camera",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 16,
+					"instanceVariables": {
+						"CameraMode": 0
+					},
+					"behaviors": {
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"CameraMover": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "smooth",
+								"default-controls": true,
+								"enabled": true
+							}
+						},
+						"SpawnerNoRefreshZone": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 144,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"world": {
+						"x": 166,
+						"y": 268,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_BounceShroom",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 242,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 242,
+						"flags": {
+							"x": false,
+							"y": false,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 15,
+						"y": 165,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_BounceShroom",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 243,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 243,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 34,
+						"y": 165,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_PinkSnail",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "DEFAULT",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 45,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 248,
+						"uid": 45,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 79,
+						"y": 144,
+						"width": 32,
+						"height": 23,
+						"originX": 0.5625,
+						"originY": 0.782608695652174,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 248,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Platform",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 2,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 2,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "PinkSnail",
+						"AIType": 0,
+						"Child1": "Carapace",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 8,
+								"acceleration": 4,
+								"deceleration": 5,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "PinkSnail",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 248,
+						"children": [
+							{
+								"uid": 249,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 45,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 79,
+						"y": 141,
+						"width": 24,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Carapace",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 249,
+					"instanceVariables": {
+						"RemainingDuration": -1
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 248,
+						"uid": 249,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 84,
+						"y": 143,
+						"width": 13,
+						"height": 14,
+						"originX": 1.3846153846153846,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_Beetle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "DEFAULT",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 46,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 150,
+						"uid": 46,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 72,
+						"y": 160,
+						"width": 16,
+						"height": 12,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 150,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Platform",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "Beetle",
+						"AIType": 0,
+						"Child1": "NULL",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 12,
+								"acceleration": 12,
+								"deceleration": 20,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Beetle",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 150,
+						"children": [
+							{
+								"uid": 46,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 72,
+						"y": 160,
+						"width": 14,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_SmallFly",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 251,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 47,
+						"uid": 251,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 40,
+						"y": 194,
+						"width": 12,
+						"height": 13,
+						"originX": 0.6666666666666666,
+						"originY": 0.46153846153846156,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Neutral",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Bullet",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": true,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "SmallFly",
+						"AIType": 1,
+						"Child1": "NULL",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"jump-strength": 0,
+								"gravity": 0,
+								"max-fall-speed": 0,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 28,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": true,
+								"step": true,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "SmallFly",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 47,
+						"children": [
+							{
+								"uid": 251,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 40,
+						"y": 194,
+						"width": 5,
+						"height": 5,
+						"originX": 0.4,
+						"originY": 0.4,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_BrightSkullSpitter",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 268,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 269,
+						"uid": 268,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 105,
+						"y": 196,
+						"width": 26,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.575,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 269,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Sine",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "BrightSkullSpitter",
+						"AIType": 2,
+						"Child1": "NULL",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "idle",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"jump-strength": 0,
+								"gravity": 0,
+								"max-fall-speed": 0,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 7,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 45,
+								"magnitude-random": 5,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "BrightSkullSpitter",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 269,
+						"children": [
+							{
+								"uid": 268,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 105,
+						"y": 191.5,
+						"width": 14,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_CyanParticle1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Variant",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 271,
+					"instanceVariables": {},
+					"behaviors": {
+						"AngleSine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 465,
+						"y": 9,
+						"width": 4,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Particles",
+					"properties": {
+						"rate": 5,
+						"spray-cone": 15,
+						"type": "continuous-spray",
+						"object": 937749936629737,
+						"live-preview": false,
+						"speed": 30,
+						"size": 4,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 24,
+						"y-randomiser": 8,
+						"initial-speed-randomiser": -2,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": 0,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 50,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 1
+					},
+					"uid": 272,
+					"instanceVariables": {
+						"Type": "NULL"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 530,
+						"y": 67.00000000000001,
+						"width": 100,
+						"height": 20,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_ElectricSnail",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 259,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 189,
+						"uid": 259,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 125,
+						"y": 116,
+						"width": 28,
+						"height": 22,
+						"originX": 0.5357142857142857,
+						"originY": 0.7391304347826086,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Carapace",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"RemainingDuration": -1
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 189,
+						"uid": 96,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 129,
+						"y": 116,
+						"width": 13,
+						"height": 14,
+						"originX": 1.3846153846153846,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 189,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Platform",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "ElectricSnail",
+						"AIType": 0,
+						"Child1": "Carapace",
+						"Child2": "NULL",
+						"ActiveAbility1": 0,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": 1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "LOS",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 8,
+								"acceleration": 4,
+								"deceleration": 5,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 32,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "ElectricSnail",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 189,
+						"children": [
+							{
+								"uid": 96,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 259,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 124,
+						"y": 114,
+						"width": 24,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_ElectricStorm",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 277,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 277,
+						"children": [
+							{
+								"uid": 313,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 162,
+						"y": 181.5,
+						"width": 32,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Particle_Leaf",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Variant",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 300,
+					"instanceVariables": {},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 8,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 463,
+						"y": -24,
+						"width": 16,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite_SpikedSnail",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 301,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 303,
+						"uid": 301,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 126,
+						"y": 142,
+						"width": 29,
+						"height": 24,
+						"originX": 0.5172413793103449,
+						"originY": 0.7083333333333334,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Carapace",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 302,
+					"instanceVariables": {
+						"RemainingDuration": -1
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 303,
+						"uid": 302,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 131,
+						"y": 144,
+						"width": 13,
+						"height": 14,
+						"originX": 1.3846153846153846,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GO_Entity",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Hostile",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 303,
+					"instanceVariables": {
+						"Weap1_Charge": -1,
+						"ReverseCharge": false,
+						"AimAngleAdjust": 0,
+						"Weap1_BulletCount": -1,
+						"MovementBehavior": "Platform",
+						"MoveDirection": "NULL",
+						"LastMovedDirection": "NULL",
+						"Occupied": false,
+						"Action_NextToDrop": 1,
+						"Action_NextToOtherEnemy": -1,
+						"Action_NextToWall": 1,
+						"PhaseThrough": false,
+						"LineOfSight_HasLOS": false,
+						"JumpDelay": -1,
+						"JumpDefaultStrength": -1,
+						"JumpCurrentBoost": -1,
+						"JumpDefaultMaxCount": 1,
+						"JumpRemaining": -1,
+						"CurrentHP": -1,
+						"MaxHP": 0,
+						"Immune": false,
+						"ImmuneRemainingTickCount": -1,
+						"CurrentNegativeEffect": -1,
+						"CurrentNegativeEffectRemainingTickCount": -1,
+						"Name": "SpikedSnail",
+						"AIType": 0,
+						"Child1": "Carapace",
+						"Child2": "NULL",
+						"ActiveAbility1": -1,
+						"ActiveAbility2": -1,
+						"ActiveAbility1TokenStatus": -1,
+						"ActiveAbility2TokenStatus": -1,
+						"AbilityTokenTriggerType1": "NULL",
+						"AbilityTokenTriggerType2": "NULL",
+						"TokenRestorationRemainingTickCount1": -1,
+						"TokenRestorationRemainingTickCount2": -1,
+						"StandingState": "NULL",
+						"ActionState": "walk",
+						"DashDelay": -1
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Controller_Platform": {
+							"properties": {
+								"max-speed": 8,
+								"acceleration": 4,
+								"deceleration": 5,
+								"jump-strength": 0,
+								"gravity": 2000,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Controller_8Direction": {
+							"properties": {
+								"max-speed": 0,
+								"acceleration": 0,
+								"deceleration": 0,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"default-controls": false,
+								"enabled": false
+							}
+						},
+						"Controller_Bullet": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Controller_Sine1": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "triangle",
+								"period": 0,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 0,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 0,
+								"cone-of-view": 0,
+								"use-collision-cells": true
+							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 0,
+								"acceleration": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 400,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "SpikedSnail",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Weap1_Charge",
+												"state": true
+											},
+											{
+												"iv": "ReverseCharge",
+												"state": true
+											},
+											{
+												"iv": "AimAngleAdjust",
+												"state": true
+											},
+											{
+												"iv": "Weap1_BulletCount",
+												"state": true
+											},
+											{
+												"iv": "MovementBehavior",
+												"state": true
+											},
+											{
+												"iv": "MoveDirection",
+												"state": true
+											},
+											{
+												"iv": "LastMovedDirection",
+												"state": true
+											},
+											{
+												"iv": "Occupied",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToDrop",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToOtherEnemy",
+												"state": true
+											},
+											{
+												"iv": "Action_NextToWall",
+												"state": true
+											},
+											{
+												"iv": "PhaseThrough",
+												"state": true
+											},
+											{
+												"iv": "LineOfSight_HasLOS",
+												"state": true
+											},
+											{
+												"iv": "JumpDelay",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultStrength",
+												"state": true
+											},
+											{
+												"iv": "JumpCurrentBoost",
+												"state": true
+											},
+											{
+												"iv": "JumpDefaultMaxCount",
+												"state": true
+											},
+											{
+												"iv": "JumpRemaining",
+												"state": true
+											},
+											{
+												"iv": "CurrentHP",
+												"state": true
+											},
+											{
+												"iv": "MaxHP",
+												"state": true
+											},
+											{
+												"iv": "Immune",
+												"state": true
+											},
+											{
+												"iv": "ImmuneRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffect",
+												"state": true
+											},
+											{
+												"iv": "CurrentNegativeEffectRemainingTickCount",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "AIType",
+												"state": true
+											},
+											{
+												"iv": "Child1",
+												"state": true
+											},
+											{
+												"iv": "Child2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility1TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "ActiveAbility2TokenStatus",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType1",
+												"state": true
+											},
+											{
+												"iv": "AbilityTokenTriggerType2",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount1",
+												"state": true
+											},
+											{
+												"iv": "TokenRestorationRemainingTickCount2",
+												"state": true
+											},
+											{
+												"iv": "StandingState",
+												"state": true
+											},
+											{
+												"iv": "ActionState",
+												"state": true
+											},
+											{
+												"iv": "DashDelay",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Platform",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"jump-strength",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"max-fall-speed",
+												true
+											],
+											[
+												"double-jump",
+												true
+											],
+											[
+												"jump-sustain",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_8Direction",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Controller_Sine1",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "LineOfSight",
+										"state": [
+											[
+												"obstacles",
+												true
+											],
+											[
+												"range",
+												true
+											],
+											[
+												"cone-of-view",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											]
+										]
+									},
+									{
+										"key": "Rotate",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Bullet",
+										"state": [
+											[
+												"speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"gravity",
+												true
+											],
+											[
+												"bounce-off-solids",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"step",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											]
+										]
+									}
+								]
+							}
+						]
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 303,
+						"children": [
+							{
+								"uid": 302,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 301,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 125,
+						"y": 142,
+						"width": 24,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 0.45454545454545453,
+						"color": [
+							1,
+							1,
+							1,
+							0.33
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "VFX_ElectricStorm",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 313,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"ReplaceColor": {
+							"parameters": {
+								"source-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"replace-color": [
+									1,
+									1,
+									0,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 277,
+						"uid": 313,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 161,
+						"y": 181,
+						"width": 30,
+						"height": 23,
+						"originX": 0.4666666666666667,
+						"originY": 0.4782608695652174,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 334376889922903,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 629522503283313,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 576,
+	"height": 288,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": null
+}

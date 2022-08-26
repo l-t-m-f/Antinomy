@@ -1,0 +1,939 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 29303,
+	"name": "Antimony",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "SVGPicture",
+			"name": "SVG Picture",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "screen",
+			"name": "Screen",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warpobject",
+			"name": "Warp object",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warpripple",
+			"name": "Warp ripple",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "toon",
+			"name": "Toon",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vibrance",
+			"name": "Vibrance",
+			"author": "Evan Wallace",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "posterize",
+			"name": "Posterize",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "divide",
+			"name": "Divide",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "multiply",
+			"name": "Multiply",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "inverse",
+			"name": "Inverse",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "lighten",
+			"name": "Lighten",
+			"author": "Scirra",
+			"version": "r293.3",
+			"bundled": false
+		}
+	],
+	"uniqueId": "ybd7cgeqqxi",
+	"objectTypes": {
+		"items": [
+			"Text",
+			"Browser",
+			"Keyboard",
+			"Mouse",
+			"Audio",
+			"GO_ElectricStorm",
+			"Sprite_LeafDoor",
+			"I2_BogSnail_B_Wall_",
+			"Particle_Leaf",
+			"I2_BogSnail_RoomB_Ground_04_PNG",
+			"Sprite_SpikedSnail",
+			"VFX_ElectricStorm"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"AJAX",
+					"Dynamic_TemplateList",
+					"KeyboardKeys",
+					"Dynamic_ZoneNamePerLayout",
+					"Dynamic_StatusEffectsList",
+					"Dynamic_EntityAbilitiesList"
+				],
+				"subfolders": [],
+				"name": "Data"
+			},
+			{
+				"items": [
+					"GO_Entity",
+					"GO_Ladder",
+					"GO_Camera",
+					"GO_Carapace",
+					"GO_PlayerSpawner",
+					"GO_EnemySpawner",
+					"GO_Liana",
+					"GO_Slope",
+					"GO_ClimbAnchor",
+					"GO_InfoHolder",
+					"GO_Waypoint",
+					"Overlay",
+					"GO_Proj",
+					"GO_SoulShard",
+					"GO_BounceShroom",
+					"SolidWall",
+					"Tilemap_Level"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"OverworldHUDBG",
+							"OverworldMapSpot",
+							"OverworldPlayer"
+						],
+						"subfolders": [],
+						"name": "Overworld_Only"
+					}
+				],
+				"name": "GameObjects"
+			},
+			{
+				"items": [
+					"UI_PlayerSlingshotAim",
+					"UI_PlayerSlingshotChargeMeter",
+					"HTMLButton",
+					"UI_Button",
+					"UI_ButtonSelect",
+					"overlay2"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Hub_Fissure",
+							"Hub_LockedButtonChains",
+							"Hub_Title",
+							"Hub_TitleLightReflection",
+							"HubButtonAsset",
+							"HubParticle",
+							"HubButtonAssetText"
+						],
+						"subfolders": [],
+						"name": "HubMenu"
+					},
+					{
+						"items": [
+							"InfoSign_MenuBG"
+						],
+						"subfolders": [],
+						"name": "InfoSigns"
+					}
+				],
+				"name": "UI"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"Sprite_PostSign",
+							"Asset_Doorway",
+							"PlayerDebugSprite",
+							"Sprite_GreenSnail",
+							"Sprite_BounceShroom",
+							"Sprite_Beetle",
+							"Sprite_BogDruggie_00",
+							"Sprite_BrightSkullSpitter",
+							"Sprite_CyanParticle1",
+							"Sprite_ElectricSnail",
+							"Sprite_Glimmer",
+							"Sprite_PinkSnail",
+							"Sprite_SmallFly",
+							"GrassAsset",
+							"Tilemap_TreeBG",
+							"Tilemap_Apperance"
+						],
+						"subfolders": [],
+						"name": "HandDrawnSprites"
+					},
+					{
+						"items": [
+							"building_002x",
+							"construction_002x",
+							"construction_012x",
+							"cutout_00_12x",
+							"DefaultTileBackground",
+							"Dog",
+							"Dog_",
+							"holes_002x",
+							"lockeddoor_",
+							"metalstructure_",
+							"metalstructure_002x",
+							"metalstructure_012x",
+							"OH_Letters3x",
+							"rocks_002x",
+							"rocks_012x",
+							"TiledBackground",
+							"trashstructure_022x",
+							"trashstructure_032x",
+							"trashstructure_052x",
+							"trashstructure_102x",
+							"trashstructure_112x",
+							"trashstructure_132x",
+							"trashstructure_142x",
+							"trashstructure_152x",
+							"1_I2_Room_A_BG_00_PNG8",
+							"1_I2_Room_A_Light_00",
+							"1_I2_RoomA_Ground_00",
+							"1_I2_RoomA_Ground_01",
+							"1_I2_RoomA_Ground_02",
+							"1_I2_RoomA_Ground_03",
+							"1_I2_RoomA_Statue_00",
+							"1_I2_RoomA_Structure_00",
+							"1_I2_RoomB_Ground_00",
+							"BeeShopfront_",
+							"CUTOUT_demon_on_lady",
+							"House_",
+							"MossyPlatform_00",
+							"trashstructure_062x",
+							"Waterfall",
+							"1_I2_BogSnail_B_Wall_00",
+							"I2_BogSnail_B_Ground_02_PNG",
+							"1_I2_BogSnail_B_Ground_03"
+						],
+						"subfolders": [],
+						"name": "Procedural"
+					}
+				],
+				"name": "Assets"
+			},
+			{
+				"items": [
+					"FullscreenTransition",
+					"SimpleColorShader",
+					"Particles",
+					"SVGPicture",
+					"NightOverlay"
+				],
+				"subfolders": [],
+				"name": "fx"
+			},
+			{
+				"items": [
+					"SpriteFont_KiwiSoda_Medium_22_1111_20x25"
+				],
+				"subfolders": [],
+				"name": "Spritefonts"
+			},
+			{
+				"items": [
+					"TEMP_SpriteFont",
+					"TEST_GO_Damager"
+				],
+				"subfolders": [],
+				"name": "TEMP"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"Dictionary",
+			"EntitySprite",
+			"Climber",
+			"Toon",
+			"BulletFirer",
+			"ButtonSprite",
+			"ButtonText",
+			"Bullet",
+			"SpriteFont",
+			"Collectible",
+			"CollectibleSprite",
+			"Bounce",
+			"Tween",
+			"Controller",
+			"LineOfSight",
+			"Jumper",
+			"CombatInteractible",
+			"EntityInfo",
+			"AbilityHandler",
+			"Rotate"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"ObjectTemplates",
+			"DEFAULT_STAGE"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"1_N1_MyHouse_A",
+					"1_N1_MyHouse_B",
+					"1_I2_BogSnail_A",
+					"1_I2_BogSnail_B"
+				],
+				"subfolders": [],
+				"name": "Maps"
+			},
+			{
+				"items": [
+					"Hub",
+					"InGame"
+				],
+				"subfolders": [],
+				"name": "Menus"
+			},
+			{
+				"items": [
+					"TestStage"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"VizTest1",
+							"VizTest2"
+						],
+						"subfolders": [],
+						"name": "VizTests"
+					}
+				],
+				"name": "Dev"
+			},
+			{
+				"items": [
+					"HUD",
+					"DEBUG"
+				],
+				"subfolders": [],
+				"name": "Global"
+			},
+			{
+				"items": [
+					"Overworld"
+				],
+				"subfolders": [],
+				"name": "Overworld"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"Main",
+			"Menu",
+			"Debug",
+			"UI",
+			"Controls",
+			"Overworld",
+			"Camera",
+			"VFX"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"AI",
+					"Collisions",
+					"Entities",
+					"Player",
+					"Combat",
+					"Spawners"
+				],
+				"subfolders": [],
+				"name": "Entities"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "Antimony_00.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 237783878186823,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Antinomy_01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 998129731652818,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 406068585218195,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 449294357057026,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 728664509620159,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 448792737990165,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 912324900819290,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 600941061462433,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 833606354627995,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "background_01.svg",
+							"type": "image/svg+xml",
+							"sid": 728161642687848,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_02.svg",
+							"type": "image/svg+xml",
+							"sid": 435946351811983,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_03.svg",
+							"type": "image/svg+xml",
+							"sid": 652805270573264,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_04.svg",
+							"type": "image/svg+xml",
+							"sid": 733517954287570,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_05.svg",
+							"type": "image/svg+xml",
+							"sid": 900564223246263,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_nature_01_1.svg",
+							"type": "image/svg+xml",
+							"sid": 534187138223562,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "background_1-N1_B.svg",
+							"type": "image/svg+xml",
+							"sid": 459907859344786,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "SVG_BG_Stage_1_I2.svg",
+							"type": "image/svg+xml",
+							"sid": 920351336325299,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "1_I2_RoomB_BG_00_SVG.svg",
+							"type": "image/svg+xml",
+							"sid": 668414704606191,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "1_I2_RoomB_BG_01_SVG.svg",
+							"type": "image/svg+xml",
+							"sid": 803857902310720,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "SVG"
+				},
+				{
+					"items": [
+						{
+							"name": "Static_TemplateList.json",
+							"type": "application/json",
+							"sid": 743396012473325,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Static_ZoneNamePerLayout.json",
+							"type": "application/json",
+							"sid": 471903061868388,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Static_StatusEffectsList.json",
+							"type": "application/json",
+							"sid": 515410964330781,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Static_EntityAbilitiesList.json",
+							"type": "application/json",
+							"sid": 564434441501140,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "StaticRef"
+				}
+			]
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "low",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "low-latency",
+		"sampling": "nearest",
+		"downscaling": "high",
+		"renderingMode": "2d",
+		"anisotropicFiltering": "off",
+		"maxSpriteSheetSize": 4096,
+		"loaderStyle": "none",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https"
+	},
+	"viewportWidth": 256,
+	"viewportHeight": 144,
+	"firstLayout": "Hub"
+}

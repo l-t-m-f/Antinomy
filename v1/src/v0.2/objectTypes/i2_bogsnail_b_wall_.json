@@ -1,0 +1,49 @@
+{
+	"name": "I2_BogSnail_B_Wall_",
+	"plugin-id": "Sprite",
+	"sid": 729777694634515,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 242,
+						"originX": 1,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7760685,
+						"collisionPoly": {
+							"points": [
+								0.9961832061068703,
+								0.9979838709677419,
+								0.003816793893129722,
+								0.9979838709677419,
+								0.003816793893129722,
+								0.0020161290322580645,
+								0.9961832061068703,
+								0.0020161290322580645
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 801355293383630,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,3894 @@
+{
+	"name": "AI",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "HideAction",
+			"type": "string",
+			"initialValue": "hide",
+			"comment": "Only for enemies",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 357252301361024
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Generic AI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "DoAI",
+					"functionDescription": "Do the logic for an entity implementing an AIType. Note that some entities, like the Player, do not implement and AIType.",
+					"functionCategory": "AI",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 214108975195204
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Do the logic for an entity implementing an AIType. Note that some entities, like the Player, do not implement and AIType."
+						}
+					],
+					"sid": 506927762282227,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 625326160621572,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 540663406142483,
+									"parameters": [
+										"\"DoAI\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 987731716504145
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 451384160574481
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 384708220942202,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 523873311734336,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 144488055883352,
+											"parameters": {
+												"instance-variable": "AIType",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 268208077131483,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GO_Entity",
+													"sid": 297202911641853,
+													"parameters": {
+														"instance-variable": "ActionState",
+														"comparison": 0,
+														"value": "WalkAction"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 764188149138762,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-enabled",
+															"objectClass": "GO_Entity",
+															"sid": 302100542188975,
+															"behaviorType": "Controller_Platform",
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "GO_Entity",
+															"sid": 299258942009381,
+															"behaviorType": "Controller_Platform",
+															"parameters": {
+																"state": "enabled"
+															}
+														}
+													],
+													"sid": 675976749791242
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "TryTurnAround",
+															"sid": 968444533787250,
+															"parameters": [
+																"entityUID"
+															]
+														},
+														{
+															"callFunction": "TryClimbSurface",
+															"sid": 178124883467937,
+															"parameters": [
+																"entityUID"
+															]
+														},
+														{
+															"callFunction": "DoAIPlatform",
+															"sid": 780467264654322,
+															"parameters": [
+																"entityUID"
+															]
+														}
+													],
+													"sid": 372789363536965
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 603358973122378
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "GO_Entity",
+													"sid": 519617760517615,
+													"parameters": {
+														"instance-variable": "ActionState",
+														"comparison": 0,
+														"value": "IdleAction"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 596787824606160,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-enabled",
+															"objectClass": "GO_Entity",
+															"sid": 177859872187953,
+															"behaviorType": "Controller_Platform"
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "GO_Entity",
+															"sid": 777190695359059,
+															"behaviorType": "Controller_Platform",
+															"parameters": {
+																"state": "disabled"
+															}
+														}
+													],
+													"sid": 132454140265671
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 374136992317989
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 852663472724175,
+											"parameters": {
+												"instance-variable": "AIType",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 448115247590222,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-enabled",
+													"objectClass": "GO_Entity",
+													"sid": 326619926031951,
+													"behaviorType": "Controller_Bullet",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "GO_Entity",
+													"sid": 932700307455317,
+													"behaviorType": "Controller_Bullet",
+													"parameters": {
+														"state": "enabled"
+													}
+												}
+											],
+											"sid": 670823644595132
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "GO_Entity",
+													"sid": 919750937191186,
+													"behaviorType": "Controller_Bullet",
+													"parameters": {
+														"angle": "anglelerp(Self.Controller_Bullet.AngleOfMotion, Self.Controller_Bullet.AngleOfMotion+random(-20,20), 0.25)"
+													}
+												}
+											],
+											"sid": 965150142380617
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 164692637007429
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 281877837478503,
+											"parameters": {
+												"instance-variable": "AIType",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 411062573062822,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-active",
+													"objectClass": "GO_Entity",
+													"sid": 537679398693455,
+													"behaviorType": "Controller_Sine1",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-active",
+													"objectClass": "GO_Entity",
+													"sid": 282986562649888,
+													"behaviorType": "Controller_Sine1",
+													"parameters": {
+														"state": "active"
+													}
+												}
+											],
+											"sid": 190617945951200
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "TurnTowardsPlayer",
+													"sid": 705087665971334,
+													"parameters": [
+														"GO_Entity.UID"
+													]
+												}
+											],
+											"sid": 933084160740621
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 405275592145244,
+											"parameters": {
+												"instance-variable": "Child1",
+												"comparison": 0,
+												"value": "\"Carapace\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DoCarapace",
+											"sid": 723834518962267,
+											"parameters": [
+												"entityUID"
+											]
+										}
+									],
+									"sid": 738637620022212
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "DoAnimator",
+											"sid": 307445261440630,
+											"parameters": [
+												"entityUID"
+											]
+										},
+										{
+											"callFunction": "TryDoAIAbility",
+											"sid": 456153604424431,
+											"parameters": [
+												"entityUID"
+											]
+										}
+									],
+									"sid": 389482773072042
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "Num_TryRayCastToPlayer",
+					"functionDescription": "",
+					"functionCategory": "AI",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "raycastingEntityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 692184711115294
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 672486112054899,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "player_x",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 626871808596089
+						},
+						{
+							"eventType": "variable",
+							"name": "player_y",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 747464748052259
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 458885370835741,
+									"parameters": {
+										"object": "GO_Entity",
+										"expression": "GO_Entity.Name",
+										"comparison": 0,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 179877203928003,
+									"parameters": {
+										"variable": "player_x",
+										"value": "GO_Entity.X"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 411857573221742,
+									"parameters": {
+										"variable": "player_y",
+										"value": "GO_Entity.Y"
+									}
+								}
+							],
+							"sid": 879180808494513
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 520665112373447,
+									"parameters": {
+										"unique-id": "raycastingEntityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 302645200332360,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-los-to-position",
+											"objectClass": "GO_Entity",
+											"sid": 121716723388718,
+											"behaviorType": "LineOfSight",
+											"parameters": {
+												"x": "player_x",
+												"y": "player_y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 758906569846763,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 781642248312410
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 380639971428966
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 569044360312617,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 650654645465748
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 620224126751714
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI, Ability management",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "TryDoAIAbility",
+					"functionDescription": "Check the conditions to exectue the logic for an entity implementing either slot of ActiveAbility or PassiveAbility.",
+					"functionCategory": "AI, Ability management",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 721340445026654
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Check if an entity with an AIType also implements an ActiveAbility or PassiveAbility and if so, trigger its ability update."
+						}
+					],
+					"sid": 949701828227828,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 353065589892943,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 197777463231352,
+									"parameters": [
+										"\"TryDoAIAbility\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 958889241568333
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 376405257577048
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 571816007723469,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 560757113237483,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 478352922361780,
+											"parameters": {
+												"instance-variable": "ActiveAbility1",
+												"comparison": 1,
+												"value": "-1"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 245497085757896,
+											"parameters": {
+												"instance-variable": "ActiveAbility2",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "DoAIAbility",
+											"sid": 419187212258525,
+											"parameters": [
+												"entityUID"
+											]
+										}
+									],
+									"sid": 294963291680442,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "DoAIAbility",
+					"functionDescription": "Executes the logic for an entity implementing either slot of ActiveAbility or PassiveAbility.",
+					"functionCategory": "AI, Ability management",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 619498871725245
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Executes the logic for an entity implementing either slot of ActiveAbility or PassiveAbility."
+						}
+					],
+					"sid": 131008107166001,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 958784816606184,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 917200225819105,
+									"parameters": [
+										"\"DoAIAbility\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 957688372029836
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 417613091857700
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 789327901816683,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 720483646510810,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 860473088704692,
+											"parameters": {
+												"instance-variable": "ActiveAbility1TokenStatus",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 236866971509762,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 111114260568595,
+													"parameters": {
+														"first-value": "Functions.CheckIfDictionaryContainsKey(Dynamic_EntityAbilitiesList.UID, str(GO_Entity.ActiveAbility1))",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 217483934720903,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "GO_Entity",
+															"sid": 841807697904351,
+															"parameters": {
+																"instance-variable": "AbilityTokenTriggerType1",
+																"comparison": 0,
+																"value": "\"LOS\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 235796841534400,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 348829988128370,
+																	"parameters": {
+																		"first-value": "Functions.Num_TryRayCastToPlayer(GO_Entity.UID)",
+																		"comparison": 0,
+																		"second-value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "CallAbilityTrigger",
+																	"sid": 204228478955253,
+																	"parameters": [
+																		"entityUID",
+																		"Dynamic_EntityAbilitiesList.Get(str(GO_Entity.ActiveAbility1))"
+																	]
+																}
+															],
+															"sid": 658656817467158
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 309881367706172
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "LogError_Custom",
+													"sid": 791831343498328,
+													"parameters": [
+														"\"DoAIAbility\"",
+														"-1",
+														"\"Ability is not part of the dynamic entity abilities list.\"",
+														"103"
+													]
+												}
+											],
+											"sid": 354141433384728
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 228834186703253
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 892986076624073,
+											"parameters": {
+												"instance-variable": "ActiveAbility1TokenStatus",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CallAbilityTrigger",
+											"sid": 975973651779904,
+											"parameters": [
+												"entityUID",
+												"Dynamic_EntityAbilitiesList.Get(str(GO_Entity.ActiveAbility2))"
+											]
+										}
+									],
+									"sid": 383080382274625,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "CallAbilityTrigger",
+					"functionDescription": "",
+					"functionCategory": "AI, Ability management",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 209723930828185
+						},
+						{
+							"name": "abilityName",
+							"type": "string",
+							"initialValue": "NULL",
+							"comment": "",
+							"sid": 315522539025690
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 665759181189435,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 615092114358030,
+									"parameters": {
+										"variable": "entityUID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 732346263321020,
+									"parameters": [
+										"\"CallAbilityTrigger\"",
+										"-1",
+										"\"entityUID\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 387879834639459
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 600678624562862
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 682916815153771,
+									"parameters": {
+										"variable": "abilityName",
+										"comparison": 0,
+										"value": "\"NULL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "LogError_InvalidValue",
+									"sid": 335166030895413,
+									"parameters": [
+										"\"CallAbilityTrigger\"",
+										"-1",
+										"\"abilityName\"",
+										"\"-1\""
+									]
+								}
+							],
+							"sid": 603284279364329
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 375878032580750
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "GO_Entity",
+									"sid": 780214741005226,
+									"parameters": {
+										"unique-id": "entityUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 253931839145408,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 229394445702748,
+											"parameters": {
+												"variable": "abilityName",
+												"comparison": 0,
+												"value": "\"ElectricStorm\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "GO_Entity",
+											"sid": 715792011522214,
+											"parameters": {
+												"object": "GO_ElectricStorm",
+												"layer": "\"Entities\"",
+												"image-point": "0",
+												"create-hierarchy": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "GO_Entity",
+											"sid": 152664052241256,
+											"parameters": {
+												"instance-variable": "ActiveAbility1TokenStatus",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 742631222004432
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 378564917865834,
+											"parameters": {
+												"variable": "abilityName",
+												"comparison": 0,
+												"value": "\"AcidSpit\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 826925886631983
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 640503911716650,
+			"background-color": [
+				0.6627450980392157,
+				0.5176470588235295,
+				0.7411764705882353,
+				1
+			]
+		},
+		{
+			"functionName": "DoAIPlatform",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 687779901067975
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 641938430419355,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 138048389572714,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 491537376405978
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 889518646775242
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 639463907611809,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 257286172137910,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 927811992835861,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "RightDir"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Controller",
+									"sid": 737454657049069,
+									"behaviorType": "Controller_Platform",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 276725772166438
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 684139750852800,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "LeftDir"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Controller",
+									"sid": 865952897027646,
+									"behaviorType": "Controller_Platform",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 327826366492013
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "TryTurnAround",
+			"functionDescription": "",
+			"functionCategory": "Controller",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 596476296015171
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 911396350018096,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 674931746992236,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 399534225901076
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 183466053894655
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 646075785547801,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Controller",
+							"sid": 656575056138541,
+							"parameters": {
+								"instance-variable": "Occupied"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 577531357724738,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 951365603244293,
+									"parameters": {
+										"instance-variable": "Action_NextToWall",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 645446598810228,
+									"parameters": {
+										"first-value": "Functions.Num_CheckWallAdjacency(controllerUID)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TurnAround",
+									"sid": 864731605710766,
+									"parameters": [
+										"controllerUID"
+									]
+								}
+							],
+							"sid": 181139220339480
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 851167841413333
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 112876526217831,
+									"parameters": {
+										"instance-variable": "Action_NextToDrop",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 260389602601175,
+									"parameters": {
+										"first-value": "Functions.Num_CheckPitAdjacency(controllerUID)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TurnAround",
+									"sid": 861441156403014,
+									"parameters": [
+										"controllerUID"
+									]
+								}
+							],
+							"sid": 397583358492979
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "TurnTowardsPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 394032112112418
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 486991056048810,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 460117606994933,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 703763476949436
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 498322479773828
+						}
+					],
+					"actions": [],
+					"sid": 985595843032627,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "player_x",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 650832733712988
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GO_Entity",
+									"sid": 685425175954270,
+									"parameters": {
+										"instance-variable": "Name",
+										"comparison": 0,
+										"value": "\"Unikid\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 413407545901538,
+									"parameters": {
+										"variable": "player_x",
+										"value": "GO_Entity.X"
+									}
+								}
+							],
+							"sid": 624150260553566
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Controller",
+									"sid": 133985534791486,
+									"parameters": {
+										"unique-id": "controllerUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 192869176250860,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Controller",
+											"sid": 457562507964118,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "player_x"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Controller",
+											"sid": 979614261869497,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Controller",
+											"sid": 747628091346473,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"value": "RightDir"
+											}
+										}
+									],
+									"sid": 639029660331757
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 943401054948480
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Controller",
+											"sid": 931586473489713,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Controller",
+											"sid": 401198794411901,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"value": "LeftDir"
+											}
+										}
+									],
+									"sid": 390096144140311
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "TurnAround",
+			"functionDescription": "",
+			"functionCategory": "Controller",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 302887498396746
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 671995136721428,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 241666005381278,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 156894676797213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 805351986900335
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 396180097178147,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 874735178694938,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 148658447236141,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "RightDir"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Controller",
+									"sid": 880775299793649,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Controller",
+									"sid": 873975645446792,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"value": "LeftDir"
+									}
+								}
+							],
+							"sid": 247171391437783
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 590119459570618
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 940713369155063,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "LeftDir"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Controller",
+									"sid": 351878866184845,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Controller",
+									"sid": 564018739418046,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"value": "RightDir"
+									}
+								}
+							],
+							"sid": 646816632994918
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "TryClimbSurface",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 992105879277442
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 100252913765057,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 774446970416334,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 892604822031234
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 980366961442331
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 644856037580932,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Controller",
+							"sid": 278753689606063,
+							"parameters": {
+								"instance-variable": "Occupied"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 191056300541216,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 787127251294895,
+									"parameters": {
+										"instance-variable": "Action_NextToWall",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 831885007477144,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Controller",
+											"sid": 246711862676399,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "RightDir"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 244341447991343,
+											"parameters": {
+												"first-value": "Functions.Num_CheckWallAdjacency(controllerUID)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 951473913542932,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 757197349665937,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 900949374369150,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"-16",
+														"-90"
+													]
+												}
+											],
+											"sid": 909797902093502
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 798781176654725
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 576820218919383,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 892425632258198,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"-16",
+														"-90"
+													]
+												}
+											],
+											"sid": 679900980393295
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 365044382798942
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 878172673047993,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 906713544701202,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"16",
+														"-90"
+													]
+												}
+											],
+											"sid": 501240905992161
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 884131763676456
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 993481800143252,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 845292582945033,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"16",
+														"-90"
+													]
+												}
+											],
+											"sid": 720343214431889
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Controller",
+											"sid": 491978845357155,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "LeftDir"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 998954145742843,
+											"parameters": {
+												"first-value": "Functions.Num_CheckWallAdjacency(controllerUID)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 377049614296667,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 188012083248075,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 551205495894009,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"16",
+														"90"
+													]
+												}
+											],
+											"sid": 375652788909661
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 266936944369389
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 266683144133364,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 304907107270058,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"-16",
+														"90"
+													]
+												}
+											],
+											"sid": 899080367323036
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 910048073388726
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 382015218246194,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 720079656772412,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"-16",
+														"90"
+													]
+												}
+											],
+											"sid": 433651212852086
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 218833720840282
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 519096908425916,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 225127992056048,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"16",
+														"90"
+													]
+												}
+											],
+											"sid": 968218101867223
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Controller",
+									"sid": 599835515283214,
+									"parameters": {
+										"instance-variable": "Action_NextToDrop",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 511638018863738,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Controller",
+											"sid": 499329197917435,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "RightDir"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 591074399179343,
+											"parameters": {
+												"first-value": "Functions.Num_CheckPitAdjacency(controllerUID)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 130908696479845,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 322911090130540,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 388172525226551,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"-16",
+														"90"
+													]
+												}
+											],
+											"sid": 960063570565725
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 772464234278058
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 445947807574138,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 402689318805367,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"16",
+														"90"
+													]
+												}
+											],
+											"sid": 415654958661803
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 571189311764148
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 949152749923375,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 580818110914670,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"16",
+														"90"
+													]
+												}
+											],
+											"sid": 683577473221353
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 745280273772632
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 752632552759250,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 541931755739431,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"-16",
+														"90"
+													]
+												}
+											],
+											"sid": 861347809284064
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Controller",
+											"sid": 531355885839604,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "LeftDir"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 141493184593280,
+											"parameters": {
+												"first-value": "Functions.Num_CheckPitAdjacency(controllerUID)",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 408704658239456,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 563538324103699,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 751222340160752,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"16",
+														"-90"
+													]
+												}
+											],
+											"sid": 459215945683512
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 793509912911421
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 575572153432952,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 270677466526035,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"16",
+														"-90"
+													]
+												}
+											],
+											"sid": 388061469818372
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 395806244311299
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 151191050873650,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 564244937533640,
+													"parameters": [
+														"controllerUID",
+														"-16",
+														"-16",
+														"-90"
+													]
+												}
+											],
+											"sid": 323965297882545
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 965623422720786
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 979250155556675,
+													"parameters": {
+														"first-value": "Controller.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClimbSurface",
+													"sid": 923312652529545,
+													"parameters": [
+														"controllerUID",
+														"16",
+														"-16",
+														"-90"
+													]
+												}
+											],
+											"sid": 630633256959500
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "ClimbSurface",
+			"functionDescription": "",
+			"functionCategory": "Entities",
+			"functionReturnType": "none",
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "controllerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 460633862039956
+				},
+				{
+					"name": "surfaceNewX",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 628125678608270
+				},
+				{
+					"name": "surfaceNewY",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 354660694032852
+				},
+				{
+					"name": "gravityChange",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 955100598996731
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 756044950813539,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 768518996893868,
+							"parameters": {
+								"variable": "controllerUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 301257124149037,
+							"parameters": [
+								"\"ClimbSurface\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 878513410534863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 747230773539595
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 332108583473826,
+							"parameters": {
+								"variable": "surfaceNewX",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 955012847901861,
+							"parameters": [
+								"\"ClimbSurface\"",
+								"-1",
+								"\"surfaceNewX\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 981577714769779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 384775576591138
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 933224882127070,
+							"parameters": {
+								"variable": "surfaceNewY",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 134112197210847,
+							"parameters": [
+								"\"ClimbSurface\"",
+								"-1",
+								"\"surfaceNewY\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 896205046766141
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 586202974742149
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 612759730487376,
+							"parameters": {
+								"variable": "gravityChange",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 776610645122707,
+							"parameters": [
+								"\"ClimbSurface\"",
+								"-1",
+								"\"gravityChange\"",
+								"\"0\""
+							]
+						}
+					],
+					"sid": 746474107970678
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 660471374208252
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 126350669438665,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tween",
+							"sid": 910324128899102,
+							"parameters": {
+								"unique-id": "controllerUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Controller",
+							"sid": 144249107974492,
+							"parameters": {
+								"instance-variable": "Occupied",
+								"value": "true"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Tween",
+							"sid": 760393527159941,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"climb\"",
+								"property": "position",
+								"end-x": "Self.X + surfaceNewX",
+								"end-y": "Self.Y + surfaceNewY",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Tween",
+							"sid": 242497520640357,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"angle\"",
+								"property": "offsetAngle",
+								"end-value": "Self.Angle+gravityChange",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 335769428792922,
+							"parameters": {
+								"seconds": "0.25"
+							}
+						},
+						{
+							"id": "set-angle-of-gravity",
+							"objectClass": "Controller",
+							"sid": 892651699576011,
+							"behaviorType": "Controller_Platform",
+							"parameters": {
+								"angle": "Self.Controller_Platform.GravityAngle+gravityChange"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 608322009951913,
+							"parameters": {
+								"seconds": "0.25"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Controller",
+							"sid": 447250540524460,
+							"parameters": {
+								"instance-variable": "Occupied",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 810448128405782
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "Tween",
+					"sid": 798639849826172,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"climb\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 513390898386818,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Controller",
+							"sid": 663498501376028,
+							"parameters": {
+								"unique-id": "Tween.UID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 837928584229695,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 759563495322973
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Num_CheckWallAdjacency",
+			"functionDescription": "",
+			"functionCategory": "Entities, Enemies, AI",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 473000043680072
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 499056072539233,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 356572980789099,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 423590904729365,
+							"parameters": [
+								"\"CheckWallAdjacency\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 135513858418876
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 534933529982318
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 340251102965867,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 127239040358567,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GO_Entity",
+									"sid": 201956095409786,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "RightDir"
+									}
+								},
+								{
+									"id": "is-by-wall",
+									"objectClass": "GO_Entity",
+									"sid": 694470343085240,
+									"behaviorType": "Controller_Platform",
+									"parameters": {
+										"side": "right"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 239304045173563,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 626477273547255
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 682222173287999
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GO_Entity",
+									"sid": 849332409936582,
+									"parameters": {
+										"instance-variable": "MoveDirection",
+										"comparison": 0,
+										"value": "LeftDir"
+									}
+								},
+								{
+									"id": "is-by-wall",
+									"objectClass": "GO_Entity",
+									"sid": 276998947816741,
+									"behaviorType": "Controller_Platform",
+									"parameters": {
+										"side": "left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 799002938060657,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 892345502357241
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 150700476561947
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 862636623054918,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 921504853168217
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Num_CheckPitAdjacency",
+			"functionDescription": "",
+			"functionCategory": "Entities, Enemies, AI",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "entityUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 955204419270150
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 442460407500311,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 736787349033293,
+							"parameters": {
+								"variable": "entityUID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LogError_InvalidValue",
+							"sid": 495874246758576,
+							"parameters": [
+								"\"CheckPitAdjacency\"",
+								"-1",
+								"\"entityUID\"",
+								"\"-1\""
+							]
+						}
+					],
+					"sid": 461630640208499
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 351134940255559
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 524830534153760,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 477939003449335,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GO_Entity",
+									"sid": 211125141855080,
+									"parameters": {
+										"instance-variable": "Occupied"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 361312206345046,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 501168893194978,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "RightDir"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 331422956408047,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 323678473320437,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 927225350527228,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 978018580795759,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X + 16)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y - 8)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 286636811146436,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 921028089370917
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 585185948886931
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 894754721738939,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 989751492132364,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 367088079778480,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X+8)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y + 16)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 484777572066949,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 327664265926213
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 473613580762365
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 833459381900355,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 921757831614350,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 278423873357367,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X - 16)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y + 8)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 864462351214667,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 841581243953691
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 566666355434789
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 172913776276890,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 489999712533369,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 227285910893145,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X - 8)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y - 16)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 373389743698039,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 986515739390986
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 815185716066449
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "GO_Entity",
+											"sid": 560794578937806,
+											"parameters": {
+												"instance-variable": "MoveDirection",
+												"comparison": 0,
+												"value": "LeftDir"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 225548870709532,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 238540337251892,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 507493960825382,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 615842373344317,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X + 16)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y + 8)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 655809168421623,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 515357065870032
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 649523962278763
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 638456111057700,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "90"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 596109801198540,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 973270894945791,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X - 8)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y + 16)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 735024048569321,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 724824807707991
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 952375664342441
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 355542814663570,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "180"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 462617908876859,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 510716781117896,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X - 16)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y - 8)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 510887452328024,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 830342973730934
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 941755582274851
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 267412455930298,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 405458108894446
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 157309035416712
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 868824580787254,
+													"parameters": {
+														"first-value": "GO_Entity.Controller_Platform.GravityAngle",
+														"comparison": 0,
+														"second-value": "270"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 800240233357820,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Tilemap_Level",
+															"sid": 244446241222321,
+															"parameters": {
+																"tile-x": "Tilemap_Level.PositionToTileX(GO_Entity.X + 8)",
+																"tile-y": "Tilemap_Level.PositionToTileY(GO_Entity.Y - 16)",
+																"comparison": 1,
+																"tile": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 376975085253739,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 191184080586475
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 146949452249549
+														}
+													],
+													"actions": [
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 170462096798686,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 424572178715280
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 612699047905838
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 324221591015082,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 775863218681492
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 626902712297743
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 927390492810706,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 709511726161604
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Abilities",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "carapaces",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "carpace_offset_x",
+							"type": "number",
+							"initialValue": "4",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 707895972324025
+						},
+						{
+							"eventType": "variable",
+							"name": "carpace_offset_y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 409932228518188
+						},
+						{
+							"functionName": "DoCarapace",
+							"functionDescription": "",
+							"functionCategory": "Entities, Enemies",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "entityUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 879598198908678
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 427340101236218,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 258319079259640,
+											"parameters": {
+												"variable": "entityUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 962145545107243,
+											"parameters": [
+												"\"DoCarapace\"",
+												"-1",
+												"\"entityUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 544537737582815
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 976565938633901
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Entity",
+											"sid": 530605670560073,
+											"parameters": {
+												"unique-id": "entityUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 453475426260093,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "GO_Entity",
+													"sid": 414214959791446,
+													"parameters": {
+														"child": "GO_Carapace",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 509286373152304,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "GO_Entity",
+															"sid": 372601983923594,
+															"parameters": {
+																"instance-variable": "ActionState",
+																"comparison": 0,
+																"value": "WalkAction"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "GO_Entity",
+															"sid": 578646652604699,
+															"parameters": {
+																"instance-variable": "Immune",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-position-to-another-object",
+															"objectClass": "GO_Carapace",
+															"sid": 859334417433823,
+															"parameters": {
+																"object": "GO_Entity",
+																"image-point-optional": "\"Carapace\""
+															}
+														}
+													],
+													"sid": 923788513737008
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 152327924874449
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "GO_Entity",
+															"sid": 404433596779025,
+															"parameters": {
+																"instance-variable": "ActionState",
+																"comparison": 0,
+																"value": "IdleAction"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "GO_Entity",
+															"sid": 192986465356281,
+															"parameters": {
+																"instance-variable": "Immune",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "GO_Carapace",
+															"sid": 563641716787829,
+															"disabled": true,
+															"parameters": {
+																"x": "GO_Entity.X",
+																"y": "GO_Entity.Y"
+															}
+														},
+														{
+															"id": "set-position-to-another-object",
+															"objectClass": "GO_Carapace",
+															"sid": 771218251487398,
+															"parameters": {
+																"object": "GO_Entity",
+																"image-point-optional": "\"Carapace2\""
+															}
+														}
+													],
+													"sid": 101083381859089,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "GO_Carapace",
+																	"sid": 749284440057323,
+																	"parameters": {
+																		"instance-variable": "RemainingDuration",
+																		"comparison": 4,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "subtract-from-instvar",
+																	"objectClass": "GO_Carapace",
+																	"sid": 590740246109283,
+																	"parameters": {
+																		"instance-variable": "RemainingDuration",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 732001955194074
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 630552735622005
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "GO_Entity",
+																	"sid": 392165701538455,
+																	"parameters": {
+																		"instance-variable": "ActionState",
+																		"value": "WalkAction"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "GO_Carapace",
+																	"sid": 207692881016021,
+																	"parameters": {
+																		"instance-variable": "RemainingDuration",
+																		"value": "-1"
+																	}
+																}
+															],
+															"sid": 326000041347496
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 208416751874650
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "LogError_Custom",
+													"sid": 530861029748797,
+													"parameters": [
+														"\"DoCarapace\"",
+														"-1",
+														"\"Specified Entity does not have a child Carapace game object.\"",
+														"098"
+													]
+												}
+											],
+											"sid": 180532304506842
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "StompCarapace",
+							"functionDescription": "",
+							"functionCategory": "Entities, Enemies",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "carapaceUID",
+									"type": "number",
+									"initialValue": "-1",
+									"comment": "",
+									"sid": 983907165903923
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 178494970885695,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 410577710561067,
+											"parameters": {
+												"variable": "carapaceUID",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LogError_InvalidValue",
+											"sid": 492312568742498,
+											"parameters": [
+												"\"StompCarapace\"",
+												"-1",
+												"\"carapaceUID\"",
+												"\"-1\""
+											]
+										}
+									],
+									"sid": 352373334434149
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 242218611124406
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "GO_Carapace",
+											"sid": 106551968348917,
+											"parameters": {
+												"unique-id": "carapaceUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 892835750870307,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-parent",
+													"objectClass": "GO_Carapace",
+													"sid": 763172730183008,
+													"parameters": {
+														"parent": "GO_Entity",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Carapace",
+													"sid": 480935513548203,
+													"parameters": {
+														"instance-variable": "RemainingDuration",
+														"value": "190"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "GO_Entity",
+													"sid": 895756523205001,
+													"parameters": {
+														"instance-variable": "ActionState",
+														"value": "IdleAction"
+													}
+												}
+											],
+											"sid": 221284801702783
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 487374301504638
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "LogError_Custom",
+													"sid": 912009131833451,
+													"parameters": [
+														"\"StompCarapace\"",
+														"-1",
+														"\"Specified Carapace does not have a parent Entity game object.\"",
+														"099"
+													]
+												}
+											],
+											"sid": 524815755457635
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 382231664795552
+				}
+			],
+			"sid": 340784392619741
+		}
+	],
+	"sid": 696496960225365
+}

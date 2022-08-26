@@ -1,0 +1,24 @@
+{
+	"name": "Swim",
+	"plugin-id": "Sprite",
+	"sid": 953975492270767,
+	"instanceVariables": [
+		{
+			"name": "WaterGravityUpdate",
+			"type": "number",
+			"desc": "",
+			"sid": 290394587297194
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "Swim",
+			"sid": 663834713263820
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

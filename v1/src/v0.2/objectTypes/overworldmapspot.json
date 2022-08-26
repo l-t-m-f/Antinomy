@@ -1,0 +1,100 @@
+{
+	"name": "OverworldMapSpot",
+	"plugin-id": "Sprite",
+	"sid": 913191657437978,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SpotID",
+			"type": "number",
+			"desc": "",
+			"sid": 507011648729287
+		},
+		{
+			"name": "Neighbor_Top",
+			"type": "number",
+			"desc": "",
+			"sid": 979890509801467
+		},
+		{
+			"name": "Neighbor_Left",
+			"type": "number",
+			"desc": "",
+			"sid": 709484950835911
+		},
+		{
+			"name": "Neighbor_Down",
+			"type": "number",
+			"desc": "",
+			"sid": 944261764540051
+		},
+		{
+			"name": "Neighbor_Right",
+			"type": "number",
+			"desc": "",
+			"sid": 140732223954712
+		},
+		{
+			"name": "MapID",
+			"type": "number",
+			"desc": "",
+			"sid": 232008557413215
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9948658,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Center",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 10,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4619111,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Center",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 789206179800318,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

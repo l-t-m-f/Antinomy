@@ -1,0 +1,22 @@
+{
+	"name": "Text",
+	"plugin-id": "Text",
+	"sid": 762659673465118,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "String representing the type of text this is (types are treated differently by the event logic).",
+			"sid": 119522706867709
+		},
+		{
+			"name": "PlaceOnDebugLayer",
+			"type": "boolean",
+			"desc": "True when this text need to be moved onto the _debug layer at creation.",
+			"sid": 845237686947684
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

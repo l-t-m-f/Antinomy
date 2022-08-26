@@ -1,0 +1,57 @@
+{
+	"name": "1_I2_RoomA_Ground_01",
+	"plugin-id": "Sprite",
+	"sid": 673105132307825,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 285,
+						"height": 198,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7044339,
+						"collisionPoly": {
+							"points": [
+								0.2718253968253968,
+								0.3903133903133903,
+								0.5,
+								0.017094017094017096,
+								0.7876984126984127,
+								0.301994301994302,
+								0.9384920634920635,
+								0.5,
+								0.876984126984127,
+								0.8233618233618234,
+								0.5,
+								0.9088319088319088,
+								0.01984126984126984,
+								0.9686609686609686,
+								0.18452380952380953,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 324350008211072,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

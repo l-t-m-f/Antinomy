@@ -1,0 +1,25 @@
+{
+	"name": "NightOverlay",
+	"plugin-id": "TiledBg",
+	"sid": 347299484580020,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "multiply",
+			"name": "Multiply"
+		}
+	],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9992237,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"name": "SVGPicture",
+	"plugin-id": "SVGPicture",
+	"sid": 250172649364921,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "warpobject",
+			"name": "WarpObject"
+		},
+		{
+			"effectId": "toon",
+			"name": "Toon"
+		},
+		{
+			"effectId": "inverse",
+			"name": "Inverse"
+		}
+	]
+}

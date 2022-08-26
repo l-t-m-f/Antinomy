@@ -1,0 +1,36 @@
+{
+	"name": "EntityInfo",
+	"plugin-id": "Sprite",
+	"sid": 823603391627520,
+	"instanceVariables": [
+		{
+			"name": "Name",
+			"type": "string",
+			"desc": "",
+			"sid": 349717751824151
+		},
+		{
+			"name": "AIType",
+			"type": "number",
+			"desc": "",
+			"sid": 282688916644684
+		},
+		{
+			"name": "Child1",
+			"type": "string",
+			"desc": "",
+			"sid": 469064743970662
+		},
+		{
+			"name": "Child2",
+			"type": "string",
+			"desc": "",
+			"sid": 930224163840812
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

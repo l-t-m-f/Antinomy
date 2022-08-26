@@ -1,0 +1,50 @@
+{
+	"name": "Overlay",
+	"plugin-id": "Sprite",
+	"sid": 579397590834945,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "OverlayName",
+			"type": "string",
+			"desc": "",
+			"sid": 198178322452030
+		},
+		{
+			"name": "CurrentlyDisplayed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 264985300194282
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2038397,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 725584091971886,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

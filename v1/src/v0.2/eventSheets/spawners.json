@@ -1,0 +1,154 @@
+{
+	"name": "Spawners",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Entities Spawners",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Spawners Update",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "InitSpawners",
+							"functionDescription": "",
+							"functionCategory": "Entities, Spawners",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 638294752228229,
+									"parameters": {
+										"object": "GO_EnemySpawner"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GO_EnemySpawner",
+									"sid": 593569130027945,
+									"parameters": {
+										"instance-variable": "Spawned"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "CreateEntity",
+									"sid": 930783147025059,
+									"parameters": [
+										"GO_EnemySpawner.X",
+										"GO_EnemySpawner.Y",
+										"GO_EnemySpawner.SpawnedEnemy",
+										"GO_EnemySpawner.UID",
+										"GO_EnemySpawner.SpawnerGravityAngle"
+									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "GO_EnemySpawner",
+									"sid": 236208360228544,
+									"parameters": {
+										"instance-variable": "Spawned",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 216097135118719
+						},
+						{
+							"functionName": "DoSpawners",
+							"functionDescription": "",
+							"functionCategory": "Entities, Spawners",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 634908353359977,
+									"parameters": {
+										"object": "GO_EnemySpawner"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 696027573763705,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 246900300039405,
+											"parameters": {
+												"instance-variable": "Spawned"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 376958504343163,
+											"isInverted": true
+										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "GO_Camera",
+											"sid": 628127730301053,
+											"behaviorType": "SpawnerNoRefreshZone",
+											"parameters": {
+												"object": "GO_EnemySpawner",
+												"image-point": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateEntity",
+											"sid": 298140870779483,
+											"parameters": [
+												"GO_EnemySpawner.X",
+												"GO_EnemySpawner.Y",
+												"GO_EnemySpawner.SpawnedEnemy",
+												"GO_EnemySpawner.UID",
+												"GO_EnemySpawner.SpawnerGravityAngle"
+											]
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "GO_EnemySpawner",
+											"sid": 414555323402339,
+											"parameters": {
+												"instance-variable": "Spawned",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 586325755423175
+								}
+							]
+						}
+					],
+					"sid": 331828788549899
+				}
+			],
+			"sid": 631936946223886
+		}
+	],
+	"sid": 221311598399543
+}

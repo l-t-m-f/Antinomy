@@ -1,0 +1,77 @@
+{
+	"name": "GO_Liana",
+	"plugin-id": "Sprite",
+	"sid": 283951813981579,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 771737711825938
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9612275,
+						"collisionPoly": {
+							"points": [
+								0.1875,
+								0,
+								0.8125,
+								0,
+								0.8125,
+								1,
+								0.1875,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "TopCenter",
+								"x": 0.5,
+								"y": 0
+							},
+							{
+								"name": "BotCenter",
+								"x": 0.5,
+								"y": 1
+							},
+							{
+								"name": "LeftCenter",
+								"x": 0,
+								"y": 0.5
+							},
+							{
+								"name": "RightCenter",
+								"x": 1,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 523166846649199,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

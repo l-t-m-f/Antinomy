@@ -1,0 +1,24 @@
+{
+	"name": "Bullet",
+	"plugin-id": "Sprite",
+	"sid": 595045782410080,
+	"instanceVariables": [
+		{
+			"name": "ShooterUID",
+			"type": "number",
+			"desc": "",
+			"sid": 720597142157620
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 181195616035896
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Proj"
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"name": "LadderMove",
+	"plugin-id": "Sprite",
+	"sid": 203515536764445,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "LadderMove",
+			"sid": 781332491852114
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

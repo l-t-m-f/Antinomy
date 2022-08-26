@@ -1,0 +1,63 @@
+{
+	"name": "Hub_TitleLightReflection",
+	"plugin-id": "Sprite",
+	"sid": 139082438371130,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "OpacitySine",
+			"sid": 400105554371467
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 256,
+						"height": 144,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9467879,
+						"collisionPoly": {
+							"points": [
+								0.19140625,
+								0.3402777777777778,
+								0.5,
+								0.3958333333333333,
+								0.7734375,
+								0.3958333333333333,
+								0.8046875,
+								0.5,
+								0.92578125,
+								0.8680555555555556,
+								0.5,
+								0.9236111111111112,
+								0.17578125,
+								0.6805555555555556,
+								0.1171875,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 833989868055046,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

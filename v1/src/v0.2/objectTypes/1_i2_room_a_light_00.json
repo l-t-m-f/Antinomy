@@ -1,0 +1,57 @@
+{
+	"name": "1_I2_Room_A_Light_00",
+	"plugin-id": "Sprite",
+	"sid": 596796388371476,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 658,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 916830,
+						"collisionPoly": {
+							"points": [
+								0.5364583333333334,
+								0.221505376344086,
+								0.5,
+								0.28817204301075267,
+								0.765625,
+								0.09462365591397849,
+								0.7552083333333334,
+								0.5,
+								0.703125,
+								0.8774193548387097,
+								0.5,
+								0.9118279569892473,
+								0.25,
+								0.8946236559139785,
+								0.390625,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 426475789700944,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

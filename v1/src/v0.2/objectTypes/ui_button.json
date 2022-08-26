@@ -1,0 +1,98 @@
+{
+	"name": "UI_Button",
+	"plugin-id": "Sprite",
+	"sid": 435841447009745,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "CurrentState",
+			"type": "number",
+			"desc": "Current state of the button. 0 is inactive; 1 is hovered; 2 is activated.",
+			"sid": 462054382713407
+		},
+		{
+			"name": "Locked",
+			"type": "boolean",
+			"desc": "True if the button is locked. The button text won't be displayed and the button will be gray and without effect (but still clickable).",
+			"sid": 243528370130845
+		},
+		{
+			"name": "BaseR",
+			"type": "number",
+			"desc": "Base value of red for this button. From 0 to 255.",
+			"sid": 663085779156454
+		},
+		{
+			"name": "BaseG",
+			"type": "number",
+			"desc": "Base value of green for this button. From 0 to 255.",
+			"sid": 702343505005786
+		},
+		{
+			"name": "BaseB",
+			"type": "number",
+			"desc": "Base value of blue for this button. From 0 to 255.",
+			"sid": 771011670626841
+		},
+		{
+			"name": "UseSelector",
+			"type": "boolean",
+			"desc": "True if a selector should be displayed when hovering this button.",
+			"sid": 601839252879252
+		},
+		{
+			"name": "InvisibleWhenLocked",
+			"type": "boolean",
+			"desc": "True if this button should simply be invisible when locked instead of having a greyed out appearance.",
+			"sid": 278102706499853
+		},
+		{
+			"name": "MainColor",
+			"type": "string",
+			"desc": "",
+			"sid": 328255720005751
+		},
+		{
+			"name": "SecondaryColor",
+			"type": "string",
+			"desc": "",
+			"sid": 721813641220678
+		},
+		{
+			"name": "ActivationEffect",
+			"type": "string",
+			"desc": "",
+			"sid": 558826421507992
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6723118,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 179531031271547,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

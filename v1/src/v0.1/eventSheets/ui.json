@@ -1,0 +1,127 @@
+{
+	"name": "UI",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Mouse Cursor",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "SyncCursor",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 290154327624217,
+							"parameters": {
+								"first-value": "UI_Cursor.Count",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "UI_Cursor",
+							"sid": 684417869998980,
+							"parameters": {
+								"x": "lerp(Self.X, Mouse.X, 0.5)",
+								"y": "lerp(Self.Y, Mouse.Y, 0.5)"
+							}
+						}
+					],
+					"sid": 126468566437292
+				}
+			],
+			"sid": 119602555177090
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "EntityUI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "EntityUI",
+							"sid": 840783165769387
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "EntityUI",
+							"sid": 679027852442739,
+							"parameters": {
+								"layer": "\"InGameUI\""
+							}
+						}
+					],
+					"sid": 917006472559617
+				},
+				{
+					"functionName": "RefreshAimIndicator",
+					"functionDescription": "",
+					"functionCategory": "UI, EntityUI",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "entityUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"sid": 629600965137093
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "GO_Entity",
+							"sid": 712695810334023,
+							"parameters": {
+								"unique-id": "entityUID"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "GO_Entity",
+							"sid": 374938828206510,
+							"parameters": {
+								"child": "EntityUI_AimIndicator",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "EntityUI_AimIndicator",
+							"sid": 621716916198101,
+							"parameters": {
+								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Mouse.X, Mouse.Y), 0.25)"
+							}
+						}
+					],
+					"sid": 691392938887710
+				}
+			],
+			"sid": 764315261400085
+		}
+	],
+	"sid": 489939245637266
+}

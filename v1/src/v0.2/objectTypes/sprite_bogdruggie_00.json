@@ -1,0 +1,37 @@
+{
+	"name": "Sprite_BogDruggie_00",
+	"plugin-id": "Sprite",
+	"sid": 223596891462092,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 65,
+						"height": 47,
+						"originX": 0.27692307692307694,
+						"originY": 0.7021276595744681,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 825471,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 880809241359862,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

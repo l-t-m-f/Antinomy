@@ -1,0 +1,60 @@
+{
+	"name": "AbilityHandler",
+	"plugin-id": "Sprite",
+	"sid": 165162205189524,
+	"instanceVariables": [
+		{
+			"name": "ActiveAbility1",
+			"type": "number",
+			"desc": "",
+			"sid": 498459385220386
+		},
+		{
+			"name": "ActiveAbility2",
+			"type": "number",
+			"desc": "",
+			"sid": 447449256757102
+		},
+		{
+			"name": "ActiveAbility1TokenStatus",
+			"type": "number",
+			"desc": "",
+			"sid": 328335361860986
+		},
+		{
+			"name": "ActiveAbility2TokenStatus",
+			"type": "number",
+			"desc": "",
+			"sid": 485968688675702
+		},
+		{
+			"name": "AbilityTokenTriggerType1",
+			"type": "string",
+			"desc": "",
+			"sid": 580128514140416
+		},
+		{
+			"name": "AbilityTokenTriggerType2",
+			"type": "string",
+			"desc": "",
+			"sid": 589721678207424
+		},
+		{
+			"name": "TokenRestorationRemainingTickCount1",
+			"type": "number",
+			"desc": "",
+			"sid": 599864337993754
+		},
+		{
+			"name": "TokenRestorationRemainingTickCount2",
+			"type": "number",
+			"desc": "",
+			"sid": 195887903398403
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

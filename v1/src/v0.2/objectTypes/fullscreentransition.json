@@ -1,0 +1,31 @@
+{
+	"name": "FullscreenTransition",
+	"plugin-id": "TiledBg",
+	"sid": 644175453878817,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 666274138619751
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "divide",
+			"name": "Divide"
+		}
+	],
+	"image": {
+		"width": 16,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2986181,
+		"useCollisionPoly": true
+	}
+}

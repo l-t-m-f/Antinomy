@@ -1,0 +1,12 @@
+{
+	"name": "Bounce",
+	"plugin-id": "Sprite",
+	"sid": 381884031476004,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Carapace",
+		"GO_BounceShroom"
+	]
+}

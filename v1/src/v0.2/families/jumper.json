@@ -1,0 +1,42 @@
+{
+	"name": "Jumper",
+	"plugin-id": "Sprite",
+	"sid": 472496291120328,
+	"instanceVariables": [
+		{
+			"name": "JumpDelay",
+			"type": "number",
+			"desc": "Delay between two jump of the object implementing Jumper.",
+			"sid": 726273726694397
+		},
+		{
+			"name": "JumpDefaultStrength",
+			"type": "number",
+			"desc": "Default strength of the jump of the object implementing Jumper.",
+			"sid": 439868609906064
+		},
+		{
+			"name": "JumpCurrentBoost",
+			"type": "number",
+			"desc": "Current bonus to apply on the Vector Y component of the jump of the object implementing Jumper.",
+			"sid": 450575442853431
+		},
+		{
+			"name": "JumpDefaultMaxCount",
+			"type": "number",
+			"desc": "Default number of jumps which can be performed by the object implementing Jumper before it reaches the ground.",
+			"sid": 158327693897809
+		},
+		{
+			"name": "JumpRemaining",
+			"type": "number",
+			"desc": "Current number of jumps remaining which can be performed by the object implementing Jumper before it reaches the ground, whence it will be reset to the JumpDefaultMaxCount.",
+			"sid": 406945758376568
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GO_Entity"
+	]
+}

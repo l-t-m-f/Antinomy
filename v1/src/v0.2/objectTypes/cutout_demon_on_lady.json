@@ -1,0 +1,46 @@
+{
+	"name": "CUTOUT_demon_on_lady",
+	"plugin-id": "Sprite",
+	"sid": 782828917203578,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "vibrance",
+			"name": "Vibrance"
+		},
+		{
+			"effectId": "posterize",
+			"name": "Posterize"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 273,
+						"height": 234,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5179927,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 260213324465222,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
